@@ -463,7 +463,7 @@ const Datenschutz = () => (
         </ul>
 
         <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">2. Nutzung durch Lehrkräfte</h3>
-        <p>Um die App als Lehrkraft zur Steuerung des Unterrichts nutzen zu können, ist eine Registrierung erforderlich. Hierbei erheben wir lediglich die für die Erbringung des Dienstes zwingend erforderlichen Bestandsdaten (z. B. E-Mail-Adresse für den Log-in). Diese Daten werden sicher verschlüsselt und nicht an unbefugte Dritte weitergegeben.</p>
+        <p>Auch Lehrkräfte benötigen für die App <strong>keinen klassischen Account</strong>. Optional kann eine E-Mail-Adresse hinterlegt werden, um sich einen Wiederherstellungs-Code (Recovery Code) per E-Mail zusenden zu lassen (technischer Versand über den Dienstleister Resend), um den Zugang zum eigenen Klassenraum wiederherzustellen. Diese E-Mail-Adresse wird vertraulich behandelt und niemals für Marketing-Zwecke verwendet.</p>
 
         <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">3. Strikt Werbefrei und "No Tracking"</h3>
         <p>Better 1UP ist ein Bildungsprodukt für den Unterricht. Wir garantieren:</p>
