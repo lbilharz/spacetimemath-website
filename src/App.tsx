@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowRight, Zap, Clock, CheckCircle2, Monitor, Smartphone } from "lucide-react";
+import { ArrowRight, Zap, Monitor, Smartphone } from "lucide-react";
 import { motion } from "framer-motion";
 
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
