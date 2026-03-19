@@ -5,7 +5,9 @@
   },
   "hero": {
     "badge": "New for smart classrooms",
-    "title_main": "Practicing math that feels like a <1>game</1>.",
+    "title_1": "Practicing math that feels like a",
+    "title_2": "game",
+    "title_3": ".",
     "subtitle": "The most engaging way to master multiplication tables. Designed for modern teachers who want to correct less and inspire more.",
     "cta_web": "Create Class (Web)",
     "app_store_dl": "Download on the",
@@ -15,7 +17,8 @@
     "disclaimer": "100% free. No student accounts required."
   },
   "features": {
-    "title": "Educationally valuable. <br/><1>Insanely motivating.</1>",
+    "title_1": "Educationally valuable.",
+    "title_2": "Insanely motivating.",
     "f1_title": "60-Second Sprints",
     "f1_desc": "Ultra-short practice phases that fit perfectly into any lesson. Focus stays high, frustration stays out.",
     "f2_title": "Visual Understanding",
@@ -24,7 +27,8 @@
     "f3_desc": "A clear 10x10 progression grid. See instantly which problems are mastered and where practice is still needed."
   },
   "cta": {
-    "title": "Ready for your next <br/> <1>Math Lesson?</1>",
+    "title_1": "Ready for your next",
+    "title_2": "Math Lesson?",
     "subtitle": "Try it out. It takes exactly 1 minute to set up your first class on the web. Or download the app directly.",
     "button_try": "Try now",
     "button_app": "Get Mobile App"

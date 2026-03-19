@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Zap, Monitor, Smartphone, Globe, Sun, Moon } from "lucide-react";
 import { motion } from "framer-motion";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
   <motion.div
@@ -303,12 +303,10 @@ const LandingPage = () => {
               {t('hero.badge')}
             </div>
             <h1 className="text-5xl lg:text-7xl font-black tracking-tighter mb-6 leading-[1.05] text-slate-800 dark:text-white transition-colors">
-              <Trans i18nKey="hero.title_main">
-                Mathe üben, das sich wie ein <span className="text-brand-yellow-hover relative inline-block">
-                  Spiel
-                  <svg className="absolute w-full h-4 -bottom-1 left-0 text-brand-yellow/40 z-[-1]" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 15 100 5" stroke="currentColor" strokeWidth="8" fill="transparent" /></svg>
-                </span> anfühlt.
-              </Trans>
+              {t('hero.title_1')} <span className="text-brand-yellow-hover relative inline-block">
+                {t('hero.title_2')}
+                <svg className="absolute w-full h-4 -bottom-1 left-0 text-brand-yellow/40 z-[-1]" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 15 100 5" stroke="currentColor" strokeWidth="8" fill="transparent" /></svg>
+              </span> {t('hero.title_3')}
             </h1>
             <p className="text-xl text-slate-500 dark:text-slate-400 mb-10 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed transition-colors">
               {t('hero.subtitle')}
@@ -352,9 +350,7 @@ const LandingPage = () => {
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-20 tracking-tight text-slate-800 dark:text-white transition-colors">
-            <Trans i18nKey="features.title">
-              Pädagogisch wertvoll. <br /><span className="text-slate-400">Wahnsinnig motivierend.</span>
-            </Trans>
+            {t('features.title_1')} <br /><span className="text-slate-400">{t('features.title_2')}</span>
           </h2>
         </FadeIn>
         <div className="grid md:grid-cols-3 gap-8">
@@ -405,9 +401,7 @@ const LandingPage = () => {
             </div>
           </div>
           <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight">
-            <Trans i18nKey="cta.title">
-              Bereit für die nächste <br /> Mathe-Stunde?
-            </Trans>
+            {t('cta.title_1')} <br /> {t('cta.title_2')}
           </h2>
           <p className="text-xl text-slate-400 font-medium mb-12 max-w-2xl mx-auto">
             {t('cta.subtitle')}

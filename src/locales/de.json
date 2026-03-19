@@ -5,7 +5,9 @@
   },
   "hero": {
     "badge": "Neu für smarte Klassenzimmer",
-    "title_main": "Mathe üben, das sich wie ein <1>Spiel</1> anfühlt.",
+    "title_1": "Mathe üben, das sich wie ein",
+    "title_2": "Spiel",
+    "title_3": "anfühlt.",
     "subtitle": "Die motivierendste Art, das kleine Einmaleins zu meistern. Entwickelt für moderne Lehrer:innen, die weniger korrigieren und mehr begeistern wollen.",
     "cta_web": "Klasse anlegen (Web)",
     "app_store_dl": "Download on the",
@@ -15,7 +17,8 @@
     "disclaimer": "100% kostenlos. Keine Accounts für Schüler nötig."
   },
   "features": {
-    "title": "Pädagogisch wertvoll. <br/><1>Wahnsinnig motivierend.</1>",
+    "title_1": "Pädagogisch wertvoll.",
+    "title_2": "Wahnsinnig motivierend.",
     "f1_title": "60-Sekunden Sprints",
     "f1_desc": "Ultrakurze Übungsphasen, die perfekt in jede Stunde passen. Konzentration bleibt hoch, Frustration bleibt aus.",
     "f2_title": "Visuelles Verständnis",
@@ -24,7 +27,8 @@
     "f3_desc": "Ein klares 10x10 Progressions-Raster. Sieh sofort auf einen Blick, welche Aufgaben sitzen und wo noch geübt werden muss."
   },
   "cta": {
-    "title": "Bereit für die nächste <br/> <1>Mathe-Stunde?</1>",
+    "title_1": "Bereit für die nächste",
+    "title_2": "Mathe-Stunde?",
     "subtitle": "Probier es aus. Es dauert genau 1 Minute, um deine erste Klasse im Web zu erstellen. Oder lade die App direkt herunter.",
     "button_try": "Sofort ausprobieren",
     "button_app": "Mobile App laden"
