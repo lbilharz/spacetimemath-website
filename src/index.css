@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-yellow: #facc15;
+  --color-brand-yellow-hover: #eab308;
+  --color-brand-text: #1e293b;
+  --color-brand-bg: #f8fafc;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text);
+  }
+}
