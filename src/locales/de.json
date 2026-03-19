@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "practice": "Sofort üben",
+    "practice_short": "Üben"
+  },
+  "hero": {
+    "badge": "Neu für smarte Klassenzimmer",
+    "title_main": "Mathe üben, das sich wie ein <1>Spiel</1> anfühlt.",
+    "subtitle": "Die motivierendste Art, das kleine Einmaleins zu meistern. Entwickelt für moderne Lehrer:innen, die weniger korrigieren und mehr begeistern wollen.",
+    "cta_web": "Klasse anlegen (Web)",
+    "app_store_dl": "Download on the",
+    "app_store_name": "App Store",
+    "play_store_dl": "GET IT ON",
+    "play_store_name": "Google Play",
+    "disclaimer": "100% kostenlos. Keine Accounts für Schüler nötig."
+  },
+  "features": {
+    "title": "Pädagogisch wertvoll. <br/><1>Wahnsinnig motivierend.</1>",
+    "f1_title": "60-Sekunden Sprints",
+    "f1_desc": "Ultrakurze Übungsphasen, die perfekt in jede Stunde passen. Konzentration bleibt hoch, Frustration bleibt aus.",
+    "f2_title": "Visuelles Verständnis",
+    "f2_desc": "Weg vom reinen Auswendiglernen. Mit interaktiven Punkte-Rastern verstehen Kinder die Logik hinter der Multiplikation.",
+    "f3_title": "Mastery Grid",
+    "f3_desc": "Ein klares 10x10 Progressions-Raster. Sieh sofort auf einen Blick, welche Aufgaben sitzen und wo noch geübt werden muss."
+  },
+  "cta": {
+    "title": "Bereit für die nächste <br/> <1>Mathe-Stunde?</1>",
+    "subtitle": "Probier es aus. Es dauert genau 1 Minute, um deine erste Klasse im Web zu erstellen. Oder lade die App direkt herunter.",
+    "button_try": "Sofort ausprobieren",
+    "button_app": "Mobile App laden"
+  },
+  "footer": {
+    "made_with": "Entwickelt mit ♥️ für Lehrer:innen in Berlin und überall.",
+    "impressum": "Impressum",
+    "privacy": "Datenschutz & Kids Privacy",
+    "login": "Web Login"
+  },
+  "legal": {
+    "back": "Zurück zur Startseite",
+    "impressum_title": "Impressum",
+    "impressum_tmg": "Angaben gemäß § 5 TMG",
+    "impressum_contact": "Kontakt",
+    "impressum_responsible": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+    "impressum_disclaimer": "Diese Website dient als Landingpage für die Bildungs-App \"Better 1UP\".",
+    "privacy_title": "Datenschutzerklärung (Privacy Policy)",
+    "privacy_date": "Stand: März 2026",
+    "privacy_intro": "Der Schutz von Kindern und sämtlichen Nutzern steht bei \"Better 1UP\" an oberster Stelle. Diese Datenschutzerklärung informiert Sie über die Verarbeitung von Daten in der App und auf dieser Landingpage.",
+    "p1_title": "1. Grundsatz: Keine Datensammlung bei Schüler:innen",
+    "p1_desc": "Wir haben Better 1UP explizit so entwickelt, dass absolut keine personenbezogenen Daten (PII) von Kindern erhoben werden.",
+    "p1_li1": "Es werden keine Schüler-Accounts angelegt oder gefordert.",
+    "p1_li2": "Es werden keine Namen, Geräte-IDs, E-Mail-Adressen oder Standortdaten von Kindern abgefragt oder gespeichert.",
+    "p1_li3": "Der Lernfortschritt in der App wird ausschließlich per gerätegebundener, anonymer Session verarbeitet.",
+    "p2_title": "2. Nutzung durch Lehrkräfte",
+    "p2_desc": "Auch Lehrkräfte benötigen für die App keinen klassischen Account. Optional kann eine E-Mail-Adresse hinterlegt werden, um sich einen Wiederherstellungs-Code (Recovery Code) per E-Mail zusenden zu lassen (technischer Versand über den Dienstleister Resend), um den Zugang zum eigenen Klassenraum wiederherzustellen. Diese E-Mail-Adresse wird vertraulich behandelt und niemals für Marketing-Zwecke verwendet.",
+    "p3_title": "3. Strikt Werbefrei und \"No Tracking\"",
+    "p3_desc": "Better 1UP ist ein Bildungsprodukt für den Unterricht. Wir garantieren:",
+    "p3_li1": "Keine Tracking-Algorithmen: Wir nutzen keine Analysedienste (wie Google Analytics) in der App.",
+    "p3_li2": "Keine Werbung: Wir zeigen keinerlei In-App-Werbung oder gesponserte Inhalte.",
+    "p3_li3": "Kein Datenverkauf: Daten werden niemals an Dritte verkauft oder für Marketing-Zwecke missbraucht.",
+    "p4_title": "4. Hosting dieser Website",
+    "p4_desc": "Unsere Infrastruktur für diese Landingpage wird über Vercel Inc. bereitgestellt. Beim Aufruf der Seite werden zwangsläufig technische Verbindungsdaten (z.B. IP-Adresse) verarbeitet, um die Seite auszuliefern. Dies ist technisch erforderlich und DSGVO-konform (Art. 6 Abs. 1 lit. f DSGVO).",
+    "p5_title": "5. Kontakt für Datenschutzanfragen",
+    "p5_desc": "Verantwortlicher im Sinne der DSGVO:"
+  },
+  "mockups": {
+    "tab_sprint": "60s Sprint",
+    "tab_matrix": "Ergebnisse",
+    "tab_live": "Klasse Live",
+    "sprint_title": "1UP",
+    "sprint_sub": "Solo Sprint",
+    "sprint_was_ist": "WAS IST",
+    "sprint_correct": "richtig",
+    "sprint_score": "score",
+    "sprint_acc": "genau",
+    "matrix_title": "Dein Profil",
+    "matrix_sub": "Sprint beendet",
+    "matrix_main": "Lernübersicht",
+    "matrix_desc": "Dein Einmaleins auf einen Blick.",
+    "matrix_mastered": "beherrscht",
+    "matrix_learning": "lernend",
+    "matrix_hard": "schwierig",
+    "matrix_unattempted": "unversucht",
+    "matrix_very_hard": "schwer (≥1.5×)",
+    "live_title": "Live Klasse",
+    "live_sub": "3a (24/24 aktiv)"
+  }
+}

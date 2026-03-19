@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "practice": "Start Practice",
+    "practice_short": "Start"
+  },
+  "hero": {
+    "badge": "New for smart classrooms",
+    "title_main": "Practicing math that feels like a <1>game</1>.",
+    "subtitle": "The most engaging way to master multiplication tables. Designed for modern teachers who want to correct less and inspire more.",
+    "cta_web": "Create Class (Web)",
+    "app_store_dl": "Download on the",
+    "app_store_name": "App Store",
+    "play_store_dl": "GET IT ON",
+    "play_store_name": "Google Play",
+    "disclaimer": "100% free. No student accounts required."
+  },
+  "features": {
+    "title": "Educationally valuable. <br/><1>Insanely motivating.</1>",
+    "f1_title": "60-Second Sprints",
+    "f1_desc": "Ultra-short practice phases that fit perfectly into any lesson. Focus stays high, frustration stays out.",
+    "f2_title": "Visual Understanding",
+    "f2_desc": "Moving away from pure memorization. Interactive dot arrays help children understand the logic behind multiplication.",
+    "f3_title": "Mastery Grid",
+    "f3_desc": "A clear 10x10 progression grid. See instantly which problems are mastered and where practice is still needed."
+  },
+  "cta": {
+    "title": "Ready for your next <br/> <1>Math Lesson?</1>",
+    "subtitle": "Try it out. It takes exactly 1 minute to set up your first class on the web. Or download the app directly.",
+    "button_try": "Try now",
+    "button_app": "Get Mobile App"
+  },
+  "footer": {
+    "made_with": "Built with ♥️ for teachers everywhere.",
+    "impressum": "Imprint",
+    "privacy": "Privacy & Kids Policy",
+    "login": "Web Login"
+  },
+  "legal": {
+    "back": "Back to Home",
+    "impressum_title": "Imprint (Impressum)",
+    "impressum_tmg": "Information pursuant to § 5 TMG",
+    "impressum_contact": "Contact",
+    "impressum_responsible": "Responsible for content according to § 55 Abs. 2 RStV",
+    "impressum_disclaimer": "This website serves as a landing page for the educational app \"Better 1UP\".",
+    "privacy_title": "Privacy Policy",
+    "privacy_date": "Last updated: March 2026",
+    "privacy_intro": "Protecting children and all users is our top priority at \"Better 1UP\". This privacy policy informs you about data processing in the app and on this landing page.",
+    "p1_title": "1. Principle: No Data Collection from Students",
+    "p1_desc": "We designed Better 1UP explicitly so that absolutely no personally identifiable information (PII) is collected from children.",
+    "p1_li1": "No student accounts are created or required.",
+    "p1_li2": "No names, device IDs, email addresses, or location data of children are requested or stored.",
+    "p1_li3": "Learning progress in the app is processed exclusively via an anonymous, device-bound session.",
+    "p2_title": "2. Usage by Teachers",
+    "p2_desc": "Teachers also do not need a traditional account for the app. Optionally, an email address can be provided to receive a recovery code via email (technically sent via our service provider Resend) to restore access to your own classroom. This email address is treated confidentially and never used for marketing purposes.",
+    "p3_title": "3. Strictly Ad-Free and \"No Tracking\"",
+    "p3_desc": "Better 1UP is an educational product for classrooms. We guarantee:",
+    "p3_li1": "No tracking algorithms: We do not use analytics services (like Google Analytics) in the app.",
+    "p3_li2": "No ads: We do not show any in-app advertising or sponsored content.",
+    "p3_li3": "No data sales: Data is never sold to third parties or misused for marketing.",
+    "p4_title": "4. Hosting of this Website",
+    "p4_desc": "Our infrastructure for this landing page is provided by Vercel Inc. When visiting the site, technical connection data (e.g., IP address) is inevitably processed to deliver the page. This is technically necessary and GDPR-compliant (Art. 6(1)(f) GDPR).",
+    "p5_title": "5. Contact for Privacy Inquiries",
+    "p5_desc": "Controller within the meaning of the GDPR:"
+  },
+  "mockups": {
+    "tab_sprint": "60s Sprint",
+    "tab_matrix": "Results",
+    "tab_live": "Class Live",
+    "sprint_title": "1UP",
+    "sprint_sub": "Solo Sprint",
+    "sprint_was_ist": "WHAT IS",
+    "sprint_correct": "correct",
+    "sprint_score": "score",
+    "sprint_acc": "accuracy",
+    "matrix_title": "Your Profile",
+    "matrix_sub": "Sprint completed",
+    "matrix_main": "Learning Overview",
+    "matrix_desc": "Your multiplication tables at a glance.",
+    "matrix_mastered": "mastered",
+    "matrix_learning": "learning",
+    "matrix_hard": "difficult",
+    "matrix_unattempted": "unattempted",
+    "matrix_very_hard": "hard (≥1.5×)",
+    "live_title": "Live Class",
+    "live_sub": "3a (24/24 active)"
+  }
+}
