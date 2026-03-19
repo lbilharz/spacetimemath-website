@@ -50,16 +50,13 @@ const PlaySVG = () => (
 
 const DeviceFrame = ({ children, isCenter }: { children: React.ReactNode, isCenter: boolean }) => (
   <div className={`relative mx-auto border-[#1c1c1e] bg-[#1c1c1e] border-[8px] rounded-[2.5rem] h-[580px] w-[270px] ${isCenter ? 'shadow-2xl shadow-indigo-900/20' : 'shadow-lg'} overflow-hidden ring-1 ring-slate-900/5 transition-shadow duration-500`}>
-    {/* Notch */}
     <div className="w-[100px] h-[22px] bg-[#1c1c1e] absolute top-0 left-1/2 -translate-x-1/2 rounded-b-[1rem] z-30 flex items-center justify-center gap-2">
       <div className="w-1.5 h-1.5 rounded-full bg-slate-800/50"></div>
       <div className="w-8 h-1.5 rounded-full bg-slate-800/50"></div>
     </div>
-    {/* Screen */}
     <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden relative z-20">
       {children}
     </div>
-    {/* Light Reflection (Gloss effect on the edge) */}
     <div className="absolute inset-0 rounded-[2.2rem] ring-1 ring-white/10 pointer-events-none z-40 block"></div>
   </div>
 );
@@ -81,7 +78,6 @@ const SprintMockup = () => (
     </div>
     <div className="flex-1 flex flex-col items-center justify-center px-4">
       <div className="grid grid-cols-4 gap-2 mb-8 opacity-90 p-4 bg-slate-50/50 rounded-2xl w-full justify-items-center border border-slate-100">
-        {/* Visual dots */}
         {[...Array(12)].map((_, i) => <circle key={i} className="w-2.5 h-2.5 rounded-full bg-brand-yellow shrink-0"></circle>)}
       </div>
       <div className="text-[9px] text-slate-400 font-bold tracking-widest mb-1">WAS IST</div>
@@ -109,7 +105,6 @@ const LernuebersichtMockup = () => {
   const getCellDesign = (r: number, c: number) => {
     let type = "unattempted";
     let dot = false;
-
     if (r === 1 && [1, 2, 3, 4, 5, 6, 7, 10].includes(c)) type = "mastered";
     if (r === 2 && [1, 2, 4, 5, 8, 9].includes(c)) type = "mastered";
     if (r === 3 && [1, 2, 4, 5, 7, 10].includes(c)) type = "mastered";
@@ -120,16 +115,13 @@ const LernuebersichtMockup = () => {
     if (r === 8 && [1, 10].includes(c)) type = "mastered";
     if (r === 9 && [1, 2, 10].includes(c)) type = "mastered";
     if (r === 10 && [1, 2, 5, 6, 7, 8, 9].includes(c)) type = "mastered";
-
     if ((r === 2 && c === 3) || (r === 8 && c === 2) || (r === 10 && c === 3)) type = "learning";
     if (r === 2 && c === 10) type = "difficult";
-
     if (r >= 6 && r <= 9 && c >= 6 && c <= 9) {
       if (!(r === 7 && c === 7) && !(r === 8 && c === 8) && !(r === 9 && c === 9)) {
         dot = true;
       }
     }
-
     switch (type) {
       case "mastered": return { color: "bg-green-50 border-green-300 text-green-600", dot };
       case "learning": return { color: "bg-amber-50 border-amber-300 text-amber-500", dot };
@@ -148,13 +140,11 @@ const LernuebersichtMockup = () => {
         </div>
         <div className="bg-green-100 text-green-700 px-2.5 py-1 rounded-md text-[9px] font-bold shadow-sm border border-green-200">+12xp</div>
       </div>
-
       <div className="flex-1 flex flex-col bg-white overflow-y-auto px-4 py-6 scrollbar-hide">
         <div className="text-left mb-5">
           <div className="text-xl font-black text-slate-800 mb-0.5 tracking-tight">Lernübersicht</div>
           <div className="text-[10px] text-slate-500 font-medium leading-snug">Dein Einmaleins auf einen Blick.</div>
         </div>
-
         <div className="grid grid-cols-[auto_repeat(10,1fr)] gap-[2px] w-full mb-6">
           <div className="flex items-center justify-center text-slate-400 font-bold text-[8px] pb-1">&times;</div>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(c => (
@@ -175,7 +165,6 @@ const LernuebersichtMockup = () => {
             </React.Fragment>
           ))}
         </div>
-
         <div className="flex flex-wrap items-center justify-start gap-y-2.5 gap-x-2.5 text-[8.5px] font-semibold text-slate-600 mt-auto">
           <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-[3px] border border-green-300 bg-green-50"></div> beherrscht</div>
           <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-[3px] border border-amber-300 bg-amber-50"></div> lernend</div>
@@ -250,12 +239,10 @@ const InteractiveHeroMockups = () => {
         let offset = idx - activeIndex;
         if (offset < -1) offset += 3;
         if (offset > 1) offset -= 3;
-
         const isCenter = offset === 0;
         const isLeft = offset === -1;
         const isRight = offset === 1;
 
-        // We use standard responsive positioning
         const xBase = isLeft ? -90 : isRight ? 90 : 0;
         const yBase = isCenter ? 0 : 30;
         const scaleBase = isCenter ? 1 : 0.85;
@@ -269,13 +256,7 @@ const InteractiveHeroMockups = () => {
             onClick={() => setActiveIndex(idx)}
             className={`absolute cursor-pointer transition-colors duration-300 pointer-events-auto w-[270px] ${!isCenter && 'hover:brightness-110'}`}
             animate={{
-              x: xBase,
-              y: yBase,
-              scale: scaleBase,
-              rotateY,
-              rotateZ,
-              zIndex,
-              opacity: isCenter ? 1 : 0.4
+              x: xBase, y: yBase, scale: scaleBase, rotateY, rotateZ, zIndex, opacity: isCenter ? 1 : 0.4
             }}
             transition={{ type: "spring", stiffness: 260, damping: 25 }}
             style={{ transformStyle: 'preserve-3d' }}
@@ -286,8 +267,6 @@ const InteractiveHeroMockups = () => {
           </motion.div>
         )
       })}
-
-      {/* Navigation Overlay */}
       <div className="absolute -bottom-12 sm:-bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50 bg-white/50 backdrop-blur-md px-6 py-3 rounded-full border border-slate-200 shadow-xl">
         {mockups.map((m, idx) => (
           <button
@@ -303,14 +282,241 @@ const InteractiveHeroMockups = () => {
   )
 }
 
+const LandingPage = () => (
+  <>
+    <section className="pt-32 pb-20 px-6 overflow-hidden relative min-h-[900px] lg:min-h-0 flex items-center">
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-brand-yellow/10 rounded-full blur-[120px] -z-10 absolute pointer-events-none" />
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 w-full">
+        <div className="flex-1 text-center lg:text-left pt-10 lg:pt-0 z-10 w-full">
+          <FadeIn>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-6 text-sm font-bold text-slate-600">
+              <span className="flex h-2 w-2 rounded-full bg-brand-yellow-hover"></span>
+              Neu für smarte Klassenzimmer
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-black tracking-tighter mb-6 leading-[1.05]">
+              Mathe üben, das sich wie ein <span className="text-brand-yellow-hover relative inline-block">
+                Spiel
+                <svg className="absolute w-full h-4 -bottom-1 left-0 text-brand-yellow/40 z-[-1]" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 15 100 5" stroke="currentColor" strokeWidth="8" fill="transparent" /></svg>
+              </span> anfühlt.
+            </h1>
+            <p className="text-xl text-slate-500 mb-10 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+              Die motivierendste Art, das kleine Einmaleins zu meistern. Entwickelt für moderne Lehrer:innen, die weniger korrigieren und mehr begeistern wollen.
+            </p>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 items-center">
+                <button onClick={() => window.open('https://better-1up.vercel.app', '_blank')} className="w-full sm:w-auto bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold text-lg py-4 px-8 rounded-full shadow-xl shadow-brand-yellow/30 transition-all hover:scale-105 flex items-center justify-center gap-3">
+                  <Monitor size={22} strokeWidth={2.5} />
+                  Klasse anlegen (Web)
+                </button>
+              </div>
+              <div className="flex justify-center lg:justify-start gap-4 items-center flex-wrap">
+                <button className="flex items-center gap-3 bg-slate-900 text-white px-5 py-3 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20">
+                  <AppleSVG />
+                  <div className="text-left leading-tight">
+                    <div className="text-[10px] text-slate-300 font-semibold tracking-wider">Download on the</div>
+                    <div className="font-bold text-sm">App Store</div>
+                  </div>
+                </button>
+                <button className="flex items-center gap-3 bg-slate-900 text-white px-5 py-3 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20">
+                  <PlaySVG />
+                  <div className="text-left leading-tight">
+                    <div className="text-[10px] text-slate-300 font-semibold tracking-wider">GET IT ON</div>
+                    <div className="font-bold text-sm">Google Play</div>
+                  </div>
+                </button>
+              </div>
+              <span className="text-slate-400 font-medium text-sm text-center lg:text-left mt-2 block w-full">100% kostenlos. Keine Accounts für Schüler nötig.</span>
+            </div>
+          </FadeIn>
+        </div>
+        <div className="flex-1 w-full relative h-[700px] flex items-center justify-center -z-0">
+          <FadeIn delay={0.2} className="w-full">
+            <InteractiveHeroMockups />
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-24 bg-white px-6 mt-16 md:mt-0 relative z-20">
+      <div className="max-w-7xl mx-auto">
+        <FadeIn>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-20 tracking-tight">
+            Pädagogisch wertvoll. <br /><span className="text-slate-400">Wahnsinnig motivierend.</span>
+          </h2>
+        </FadeIn>
+        <div className="grid md:grid-cols-3 gap-8">
+          <FadeIn delay={0.1}>
+            <div className="bg-slate-50 p-10 rounded-[2rem] border border-slate-100 hover:shadow-xl hover:shadow-slate-200/50 transition-all group h-full">
+              <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                <Zap className="text-brand-yellow-hover" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">60-Sekunden Sprints</h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                Ultrakurze Übungsphasen, die perfekt in jede Stunde passen. Konzentration bleibt hoch, Frustration bleibt aus.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="bg-slate-50 p-10 rounded-[2rem] border border-slate-100 hover:shadow-xl hover:shadow-slate-200/50 transition-all group h-full">
+              <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                <DotGrid />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Visuelles Verständnis</h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                Weg vom reinen Auswendiglernen. Mit interaktiven Punkte-Rastern verstehen Kinder die Logik hinter der Multiplikation.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <div className="bg-slate-50 p-10 rounded-[2rem] border border-slate-100 hover:shadow-xl hover:shadow-slate-200/50 transition-all group h-full">
+              <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform overflow-hidden">
+                <Logo className="w-10 h-10" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Mastery Grid</h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                Ein klares 10x10 Progressions-Raster. Sieh sofort auf einen Blick, welche Aufgaben sitzen und wo noch geübt werden muss.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-24 px-6 bg-slate-900 text-white relative overflow-hidden mt-12 mb-12 rounded-[3rem] mx-4 md:mx-10 shadow-2xl">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-brand-yellow/20 blur-[150px] rounded-full pointer-events-none" />
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <FadeIn>
+          <div className="flex justify-center mb-8">
+            <div className="bg-white/10 p-2 rounded-2xl">
+              <Logo className="w-12 h-12" />
+            </div>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight">
+            Bereit für die nächste <br /> Mathe-Stunde?
+          </h2>
+          <p className="text-xl text-slate-400 font-medium mb-12 max-w-2xl mx-auto">
+            Probier es aus. Es dauert genau 1 Minute, um deine erste Klasse im Web zu erstellen. Oder lade die App direkt herunter.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
+            <button onClick={() => window.open('https://better-1up.vercel.app', '_blank')} className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-black text-lg py-4 flex-1 sm:w-auto px-8 rounded-xl shadow-2xl shadow-brand-yellow/20 transition-all hover:-translate-y-1 inline-flex items-center justify-center gap-3">
+              <Monitor size={22} strokeWidth={2.5} />
+              Sofort ausprobieren
+            </button>
+            <button className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white px-8 py-4 w-full sm:w-auto rounded-xl hover:-translate-y-1 transition-all outline outline-1 outline-white/20">
+              <Smartphone size={22} strokeWidth={2.5} />
+              <span className="text-left font-bold text-lg">Mobile App laden</span>
+            </button>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  </>
+);
+
+const Impressum = () => (
+  <section className="pt-32 pb-20 px-6 w-full max-w-3xl mx-auto">
+    <FadeIn>
+      <h1 className="text-4xl font-black mb-8">Impressum</h1>
+      <div className="text-slate-600 space-y-4 font-medium">
+        <h3 className="text-xl font-bold text-slate-800">Angaben gemäß § 5 TMG</h3>
+        <p>
+          Lars Bilharz<br/>
+          Boppstraße 3<br/>
+          10967 Berlin<br/>
+          Germany
+        </p>
+        
+        <h3 className="text-xl font-bold text-slate-800 mt-8">Kontakt</h3>
+        <p>
+          Telefon: +49 170 43 610 17<br/>
+          E-Mail: <a href="mailto:info@lars-bilharz.de" className="text-blue-600 hover:underline">info@lars-bilharz.de</a>
+        </p>
+
+        <h3 className="text-xl font-bold text-slate-800 mt-8">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+        <p>
+          Lars Bilharz<br/>
+          (Anschrift wie oben)
+        </p>
+
+        <p className="text-sm text-slate-400 mt-12">
+          Diese Website dient als Landingpage für die Bildungs-App "Better 1UP". 
+        </p>
+      </div>
+    </FadeIn>
+  </section>
+);
+
+const Datenschutz = () => (
+  <section className="pt-32 pb-20 px-6 w-full max-w-3xl mx-auto">
+    <FadeIn>
+      <h1 className="text-4xl font-black mb-8">Datenschutzerklärung (Privacy Policy)</h1>
+      <div className="text-slate-600 space-y-6 font-medium leading-relaxed">
+        <p><strong>Stand: März 2026</strong></p>
+        <p>Der Schutz von Kindern und sämtlichen Nutzern steht bei "Better 1UP" an oberster Stelle. Diese Datenschutzerklärung informiert Sie über die Verarbeitung von Daten in der App und auf dieser Landingpage.</p>
+        
+        <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">1. Grundsatz: Keine Datensammlung bei Schüler:innen</h3>
+        <p>Wir haben Better 1UP explizit so entwickelt, dass <strong>absolut keine personenbezogenen Daten (PII) von Kindern</strong> erhoben werden.</p>
+        <ul className="list-disc pl-5 space-y-2">
+           <li>Es werden <strong>keine Schüler-Accounts</strong> angelegt oder gefordert.</li>
+           <li>Es werden <strong>keine Namen, Geräte-IDs, E-Mail-Adressen oder Standortdaten</strong> von Kindern abgefragt oder gespeichert.</li>
+           <li>Der Lernfortschritt in der App wird ausschließlich per gerätegebundener, anonymer Session verarbeitet.</li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">2. Nutzung durch Lehrkräfte</h3>
+        <p>Um die App als Lehrkraft zur Steuerung des Unterrichts nutzen zu können, ist eine Registrierung erforderlich. Hierbei erheben wir lediglich die für die Erbringung des Dienstes zwingend erforderlichen Bestandsdaten (z. B. E-Mail-Adresse für den Log-in). Diese Daten werden sicher verschlüsselt und nicht an unbefugte Dritte weitergegeben.</p>
+
+        <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">3. Strikt Werbefrei und "No Tracking"</h3>
+        <p>Better 1UP ist ein Bildungsprodukt für den Unterricht. Wir garantieren:</p>
+        <ul className="list-disc pl-5 space-y-2">
+           <li><strong>Keine Tracking-Algorithmen:</strong> Wir nutzen keine Analysedienste (wie Google Analytics) in der App.</li>
+           <li><strong>Keine Werbung:</strong> Wir zeigen keinerlei In-App-Werbung oder gesponserte Inhalte.</li>
+           <li><strong>Kein Datenverkauf:</strong> Daten werden niemals an Dritte verkauft oder für Marketing-Zwecke missbraucht.</li>
+        </ul>
+
+        <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">4. Hosting dieser Website</h3>
+        <p>Unsere Infrastruktur für diese Landingpage wird über Vercel Inc. bereitgestellt. Beim Aufruf der Seite werden zwangsläufig technische Verbindungsdaten (z.B. IP-Adresse) verarbeitet, um die Seite auszuliefern. Dies ist technisch erforderlich und DSGVO-konform (Art. 6 Abs. 1 lit. f DSGVO).</p>
+
+        <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">5. Kontakt für Datenschutzanfragen</h3>
+        <p>
+          Verantwortlicher im Sinne der DSGVO:<br/>
+          Lars Bilharz<br/>
+          Boppstraße 3<br/>
+          10967 Berlin<br/>
+          E-Mail: <a href="mailto:info@lars-bilharz.de" className="text-blue-600 hover:underline">info@lars-bilharz.de</a>
+        </p>
+      </div>
+    </FadeIn>
+  </section>
+);
+
 function App() {
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    const onLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+    };
+    window.addEventListener('popstate', onLocationChange);
+    return () => window.removeEventListener('popstate', onLocationChange);
+  }, []);
+
+  const navigate = (path: string) => {
+    window.history.pushState({}, '', path);
+    setCurrentPath(path);
+    window.scrollTo(0, 0);
+  };
+
+  const renderContent = () => {
+    if (currentPath === '/impressum') return <Impressum />;
+    if (currentPath === '/datenschutz') return <Datenschutz />;
+    return <LandingPage />;
+  };
+
   return (
-    <div className="min-h-screen text-slate-800 selection:bg-brand-yellow/30 bg-brand-bg pb-10">
-      {/* Navigation */}
+    <div className="min-h-screen text-slate-800 selection:bg-brand-yellow/30 bg-brand-bg pb-10 flex flex-col">
       <nav className="fixed top-0 w-full bg-slate-50/80 backdrop-blur-xl z-[100] border-b border-slate-200/50">
         <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
-          <div className="flex items-center gap-3 font-extrabold text-2xl tracking-tight">
-            {/* Added white background pill to logo so it doesn't get lost */}
+          <div className="flex items-center gap-3 font-extrabold text-2xl tracking-tight cursor-pointer" onClick={() => navigate('/')}>
             <div className="bg-white p-1.5 rounded-xl shadow-sm border border-slate-100 flex items-center justify-center">
               <Logo className="w-7 h-7" />
             </div>
@@ -324,156 +530,20 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 overflow-hidden relative min-h-[900px] lg:min-h-0 flex items-center">
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-brand-yellow/10 rounded-full blur-[120px] -z-10 absolute pointer-events-none" />
+      <main className="flex-1 w-full">
+        {renderContent()}
+      </main>
 
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 w-full">
-          <div className="flex-1 text-center lg:text-left pt-10 lg:pt-0 z-10 w-full">
-            <FadeIn>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-6 text-sm font-bold text-slate-600">
-                <span className="flex h-2 w-2 rounded-full bg-brand-yellow-hover"></span>
-                Neu für smarte Klassenzimmer
-              </div>
-              <h1 className="text-5xl lg:text-7xl font-black tracking-tighter mb-6 leading-[1.05]">
-                Mathe üben, das sich wie ein <span className="text-brand-yellow-hover relative inline-block">
-                  Spiel
-                  <svg className="absolute w-full h-4 -bottom-1 left-0 text-brand-yellow/40 z-[-1]" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 15 100 5" stroke="currentColor" strokeWidth="8" fill="transparent" /></svg>
-                </span> anfühlt.
-              </h1>
-              <p className="text-xl text-slate-500 mb-10 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
-                Die motivierendste Art, das kleine Einmaleins zu meistern. Entwickelt für moderne Lehrer:innen, die weniger korrigieren und mehr begeistern wollen.
-              </p>
-
-              {/* CTA Hub */}
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 items-center">
-                  <button onClick={() => window.open('https://better-1up.vercel.app', '_blank')} className="w-full sm:w-auto bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold text-lg py-4 px-8 rounded-full shadow-xl shadow-brand-yellow/30 transition-all hover:scale-105 flex items-center justify-center gap-3">
-                    <Monitor size={22} strokeWidth={2.5} />
-                    Klasse anlegen (Web)
-                  </button>
-                </div>
-                {/* App Stores */}
-                <div className="flex justify-center lg:justify-start gap-4 items-center flex-wrap">
-                  <button className="flex items-center gap-3 bg-slate-900 text-white px-5 py-3 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20">
-                    <AppleSVG />
-                    <div className="text-left leading-tight">
-                      <div className="text-[10px] text-slate-300 font-semibold tracking-wider">Download on the</div>
-                      <div className="font-bold text-sm">App Store</div>
-                    </div>
-                  </button>
-                  <button className="flex items-center gap-3 bg-slate-900 text-white px-5 py-3 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20">
-                    <PlaySVG />
-                    <div className="text-left leading-tight">
-                      <div className="text-[10px] text-slate-300 font-semibold tracking-wider">GET IT ON</div>
-                      <div className="font-bold text-sm">Google Play</div>
-                    </div>
-                  </button>
-                </div>
-                <span className="text-slate-400 font-medium text-sm text-center lg:text-left mt-2 block w-full">100% kostenlos. Keine Accounts für Schüler nötig.</span>
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* Interactive Hero Mockups Carousel */}
-          <div className="flex-1 w-full relative h-[700px] flex items-center justify-center -z-0">
-            <FadeIn delay={0.2} className="w-full">
-              <InteractiveHeroMockups />
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-24 bg-white px-6 mt-16 md:mt-0 relative z-20">
-        <div className="max-w-7xl mx-auto">
-          <FadeIn>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-20 tracking-tight">
-              Pädagogisch wertvoll. <br /><span className="text-slate-400">Wahnsinnig motivierend.</span>
-            </h2>
-          </FadeIn>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <FadeIn delay={0.1}>
-              <div className="bg-slate-50 p-10 rounded-[2rem] border border-slate-100 hover:shadow-xl hover:shadow-slate-200/50 transition-all group h-full">
-                <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                  <Zap className="text-brand-yellow-hover" size={32} />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">60-Sekunden Sprints</h3>
-                <p className="text-slate-600 font-medium leading-relaxed">
-                  Ultrakurze Übungsphasen, die perfekt in jede Stunde passen. Konzentration bleibt hoch, Frustration bleibt aus.
-                </p>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <div className="bg-slate-50 p-10 rounded-[2rem] border border-slate-100 hover:shadow-xl hover:shadow-slate-200/50 transition-all group h-full">
-                <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                  <DotGrid />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Visuelles Verständnis</h3>
-                <p className="text-slate-600 font-medium leading-relaxed">
-                  Weg vom reinen Auswendiglernen. Mit interaktiven Punkte-Rastern verstehen Kinder die Logik hinter der Multiplikation.
-                </p>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.3}>
-              <div className="bg-slate-50 p-10 rounded-[2rem] border border-slate-100 hover:shadow-xl hover:shadow-slate-200/50 transition-all group h-full">
-                <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform overflow-hidden">
-                  <Logo className="w-10 h-10" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Mastery Grid</h3>
-                <p className="text-slate-600 font-medium leading-relaxed">
-                  Ein klares 10x10 Progressions-Raster. Sieh sofort auf einen Blick, welche Aufgaben sitzen und wo noch geübt werden muss.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Layer */}
-      <section className="py-24 px-6 bg-slate-900 text-white relative overflow-hidden mt-12 mb-12 rounded-[3rem] mx-4 md:mx-10 shadow-2xl">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-brand-yellow/20 blur-[150px] rounded-full pointer-events-none" />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <FadeIn>
-            <div className="flex justify-center mb-8">
-              <div className="bg-white/10 p-2 rounded-2xl">
-                <Logo className="w-12 h-12" />
-              </div>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight">
-              Bereit für die nächste <br /> Mathe-Stunde?
-            </h2>
-            <p className="text-xl text-slate-400 font-medium mb-12 max-w-2xl mx-auto">
-              Probier es aus. Es dauert genau 1 Minute, um deine erste Klasse im Web zu erstellen. Oder lade die App direkt herunter.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
-              <button onClick={() => window.open('https://better-1up.vercel.app', '_blank')} className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-black text-lg py-4 flex-1 sm:w-auto px-8 rounded-xl shadow-2xl shadow-brand-yellow/20 transition-all hover:-translate-y-1 inline-flex items-center justify-center gap-3">
-                <Monitor size={22} strokeWidth={2.5} />
-                Sofort ausprobieren
-              </button>
-
-              <button className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white px-8 py-4 w-full sm:w-auto rounded-xl hover:-translate-y-1 transition-all outline outline-1 outline-white/20">
-                <Smartphone size={22} strokeWidth={2.5} />
-                <span className="text-left font-bold text-lg">Mobile App laden</span>
-              </button>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      <footer className="py-12 bg-brand-bg text-slate-500 text-center text-sm font-medium border-t border-slate-200">
-        <div className="flex items-center justify-center gap-2 mb-4 text-xl font-bold text-slate-800">
+      <footer className="py-12 bg-brand-bg text-slate-500 text-center text-sm font-medium border-t border-slate-200 mt-auto">
+        <div className="flex items-center justify-center gap-2 mb-4 text-xl font-bold text-slate-800 cursor-pointer" onClick={() => navigate('/')}>
           <Logo className="w-6 h-6 grayscale opacity-80" />
           Better <span className="text-brand-yellow">1UP</span>
         </div>
         <p>Entwickelt mit ♥️ für Lehrer:innen in Berlin und überall.</p>
-        <div className="flex justify-center gap-6 mt-6">
-          <span className="hover:text-slate-900 cursor-pointer transition-colors">App Store</span>
-          <span className="hover:text-slate-900 cursor-pointer transition-colors">Google Play</span>
-          <span className="hover:text-slate-900 cursor-pointer transition-colors">Web Login</span>
+        <div className="flex justify-center gap-6 mt-6 flex-wrap">
+          <span onClick={() => navigate('/impressum')} className="hover:text-slate-900 cursor-pointer transition-colors">Impressum</span>
+          <span onClick={() => navigate('/datenschutz')} className="hover:text-slate-900 cursor-pointer transition-colors">Datenschutz &amp; Kids Privacy</span>
+          <span onClick={() => window.open('https://better-1up.vercel.app', '_blank')} className="hover:text-slate-900 cursor-pointer transition-colors">Web Login</span>
         </div>
       </footer>
     </div>
