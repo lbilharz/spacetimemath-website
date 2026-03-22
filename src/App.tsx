@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowRight, Zap, Monitor, Smartphone, Globe, Sun, Moon } from "lucide-react";
+import { ArrowRight, Zap, Monitor, Smartphone, Globe, Sun, Moon, Brain } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
@@ -99,6 +99,38 @@ const SprintMockup = () => {
           <div className="text-[#5DD23C] dark:text-green-400 font-black text-base">93%</div>
           <div className="text-[8px] text-slate-400 font-bold uppercase">{t('mockups.sprint_acc')}</div>
         </div>
+      </div>
+    </div>
+  </div>
+)};
+
+const TapMockup = () => {
+  const { t } = useTranslation();
+  return (
+  <div className="w-full h-full bg-[#f8fafc] dark:bg-slate-950 flex flex-col pt-8 transition-colors">
+    <div className="px-4 py-4 flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 transition-colors">
+      <div>
+        <div className="font-extrabold text-slate-800 dark:text-white text-sm leading-tight">{t('mockups.sprint_title')}</div>
+        <div className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">{t('mockups.tap_sub')}</div>
+      </div>
+      <div className="relative w-8 h-8">
+        <svg viewBox="0 0 44 44">
+          <circle cx="22" cy="22" r="18" fill="none" stroke="#e9ecef" strokeWidth="4" className="dark:stroke-slate-800" />
+          <circle cx="22" cy="22" r="18" fill="none" stroke="#eab308" strokeWidth="4" strokeDasharray="113" strokeDashoffset="75" strokeLinecap="round" transform="rotate(-90 22 22)" />
+        </svg>
+        <span className="absolute inset-0 flex items-center justify-center font-bold text-slate-700 dark:text-slate-300 text-[10px]">19</span>
+      </div>
+    </div>
+    <div className="flex-1 flex flex-col items-center px-4 pt-10 pb-6 w-full">
+      <div className="text-[9px] text-slate-400 font-bold tracking-widest mb-1 uppercase">{t('mockups.sprint_was_ist')}</div>
+      <div className="text-4xl font-black text-slate-800 dark:text-white leading-none mb-10 w-full text-center">7 &times; 8</div>
+      
+      <div className="grid grid-cols-2 gap-3 w-full mt-auto">
+        {[48, 54, 56, 64].map((opt, i) => (
+          <div key={i} className="bg-brand-yellow/10 dark:bg-brand-yellow/5 border-2 border-brand-yellow/30 dark:border-brand-yellow/20 rounded-2xl py-6 flex items-center justify-center font-black text-2xl text-slate-800 dark:text-brand-yellow shadow-sm">
+            {opt}
+          </div>
+        ))}
       </div>
     </div>
   </div>
@@ -232,6 +264,7 @@ const InteractiveHeroMockups = () => {
 
   const mockups = [
     { id: 'sprint', comp: <SprintMockup />, label: t('mockups.tab_sprint') },
+    { id: 'tap', comp: <TapMockup />, label: t('mockups.tab_tap') },
     { id: 'matrix', comp: <LernuebersichtMockup />, label: t('mockups.tab_matrix') },
     { id: 'leaderboard', comp: <LeaderboardMockup />, label: t('mockups.tab_live') }
   ];
@@ -244,26 +277,28 @@ const InteractiveHeroMockups = () => {
     >
       {mockups.map((m, idx) => {
         let offset = idx - activeIndex;
-        if (offset < -1) offset += 3;
-        if (offset > 1) offset -= 3;
+        if (offset < -2) offset += 4;
+        if (offset > 1) offset -= 4;
+        
         const isCenter = offset === 0;
         const isLeft = offset === -1;
         const isRight = offset === 1;
+        const isBack = offset === -2;
 
-        const xBase = isLeft ? -90 : isRight ? 90 : 0;
-        const yBase = isCenter ? 0 : 30;
-        const scaleBase = isCenter ? 1 : 0.85;
+        const xBase = isLeft ? -100 : isRight ? 100 : isBack ? 0 : 0;
+        const yBase = isCenter ? 0 : isBack ? 60 : 30;
+        const scaleBase = isCenter ? 1 : isBack ? 0.7 : 0.85;
         const rotateY = isLeft ? 15 : isRight ? -15 : 0;
         const rotateZ = isLeft ? -4 : isRight ? 4 : 0;
-        const zIndex = isCenter ? 40 : 20;
+        const zIndex = isCenter ? 40 : isBack ? 10 : 20;
 
         return (
           <motion.div
             key={m.id}
             onClick={() => setActiveIndex(idx)}
-            className={`absolute cursor-pointer transition-colors duration-300 pointer-events-auto w-[270px] ${!isCenter && 'hover:brightness-110'}`}
+            className={`absolute cursor-pointer transition-colors duration-500 pointer-events-auto w-[270px] ${!isCenter && 'hover:brightness-110'}`}
             animate={{
-              x: xBase, y: yBase, scale: scaleBase, rotateY, rotateZ, zIndex, opacity: isCenter ? 1 : 0.4
+              x: xBase, y: yBase, scale: scaleBase, rotateY, rotateZ, zIndex, opacity: isCenter ? 1 : isBack ? 0 : 0.4
             }}
             transition={{ type: "spring", stiffness: 260, damping: 25 }}
             style={{ transformStyle: 'preserve-3d' }}
@@ -353,37 +388,48 @@ const LandingPage = () => {
             {t('features.title_1')} <br /><span className="text-slate-400">{t('features.title_2')}</span>
           </h2>
         </FadeIn>
-        <div className="grid md:grid-cols-3 gap-8">
-          <FadeIn delay={0.1}>
-            <div className="bg-slate-50 dark:bg-slate-800 p-10 rounded-[2rem] border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all group h-full">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <FadeIn delay={0.1} className="h-full">
+            <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all group h-full">
               <div className="w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <Zap className="text-brand-yellow-hover" size={32} />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-slate-800 dark:text-white transition-colors">{t('features.f1_title')}</h3>
-              <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed transition-colors">
+              <h3 className="text-xl font-bold mb-4 text-slate-800 dark:text-white transition-colors">{t('features.f1_title')}</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed transition-colors">
                 {t('features.f1_desc')}
               </p>
             </div>
           </FadeIn>
-          <FadeIn delay={0.2}>
-            <div className="bg-slate-50 dark:bg-slate-800 p-10 rounded-[2rem] border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all group h-full">
+          <FadeIn delay={0.2} className="h-full">
+            <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all group h-full">
               <div className="w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <DotGrid />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-slate-800 dark:text-white transition-colors">{t('features.f2_title')}</h3>
-              <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed transition-colors">
+              <h3 className="text-xl font-bold mb-4 text-slate-800 dark:text-white transition-colors">{t('features.f2_title')}</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed transition-colors">
                 {t('features.f2_desc')}
               </p>
             </div>
           </FadeIn>
-          <FadeIn delay={0.3}>
-            <div className="bg-slate-50 dark:bg-slate-800 p-10 rounded-[2rem] border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all group h-full">
+          <FadeIn delay={0.3} className="h-full">
+            <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all group h-full">
               <div className="w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform overflow-hidden">
                 <Logo className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-slate-800 dark:text-white transition-colors">{t('features.f3_title')}</h3>
-              <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed transition-colors">
+              <h3 className="text-xl font-bold mb-4 text-slate-800 dark:text-white transition-colors">{t('features.f3_title')}</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed transition-colors">
                 {t('features.f3_desc')}
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.4} className="h-full">
+            <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all group h-full">
+              <div className="w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                <Brain className="text-indigo-400" size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-slate-800 dark:text-white transition-colors">{t('features.f4_title')}</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed transition-colors">
+                {t('features.f4_desc')}
               </p>
             </div>
           </FadeIn>
@@ -519,6 +565,7 @@ function App() {
     // Check initial system preference if no class is set
     if (!document.documentElement.classList.contains('dark') && window.matchMedia('(prefers-color-scheme: dark)').matches) {
        document.documentElement.classList.add('dark');
+       // eslint-disable-next-line react-hooks/set-state-in-effect
        setIsDark(true);
     }
   }, []);

@@ -24,7 +24,9 @@
     "f2_title": "Visuelles Verständnis",
     "f2_desc": "Weg vom reinen Auswendiglernen. Mit interaktiven Punkte-Rastern verstehen Kinder die Logik hinter der Multiplikation.",
     "f3_title": "Mastery Grid",
-    "f3_desc": "Ein klares 10x10 Progressions-Raster. Sieh sofort auf einen Blick, welche Aufgaben sitzen und wo noch geübt werden muss."
+    "f3_desc": "Ein klares 10x10 Progressions-Raster. Sieh sofort auf einen Blick, welche Aufgaben sitzen und wo noch geübt werden muss.",
+    "f4_title": "Adaptive Engine",
+    "f4_desc": "Passt den Schwierigkeitsgrad in Echtzeit an die persönliche Geschwindigkeit und Genauigkeit an. Die perfekte Herausforderung, nie frustrierend."
   },
   "cta": {
     "title_1": "Bereit für die nächste",
@@ -68,10 +70,12 @@
   },
   "mockups": {
     "tab_sprint": "60s Sprint",
+    "tab_tap": "Tipp-Modus",
     "tab_matrix": "Ergebnisse",
     "tab_live": "Klasse Live",
     "sprint_title": "1UP",
     "sprint_sub": "Solo Sprint",
+    "tap_sub": "4 Buttons",
     "sprint_was_ist": "WAS IST",
     "sprint_correct": "richtig",
     "sprint_score": "score",

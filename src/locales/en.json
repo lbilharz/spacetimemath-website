@@ -24,7 +24,9 @@
     "f2_title": "Visual Understanding",
     "f2_desc": "Moving away from pure memorization. Interactive dot arrays help children understand the logic behind multiplication.",
     "f3_title": "Mastery Grid",
-    "f3_desc": "A clear 10x10 progression grid. See instantly which problems are mastered and where practice is still needed."
+    "f3_desc": "A clear 10x10 progression grid. See instantly which problems are mastered and where practice is still needed.",
+    "f4_title": "Adaptive Engine",
+    "f4_desc": "Dynamically matches problem difficulty to the student's speed and accuracy in real time. Perfectly tailored challenges, zero frustration."
   },
   "cta": {
     "title_1": "Ready for your next",
@@ -68,10 +70,12 @@
   },
   "mockups": {
     "tab_sprint": "60s Sprint",
+    "tab_tap": "Tap Mode",
     "tab_matrix": "Results",
     "tab_live": "Class Live",
     "sprint_title": "1UP",
     "sprint_sub": "Solo Sprint",
+    "tap_sub": "Button Choice",
     "sprint_was_ist": "WHAT IS",
     "sprint_correct": "correct",
     "sprint_score": "score",
