@@ -269,11 +269,40 @@ const InteractiveHeroMockups = () => {
     { id: 'leaderboard', comp: <LeaderboardMockup />, label: t('mockups.tab_live') }
   ];
 
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEndHandler = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      setActiveIndex((curr) => (curr + 1) % mockups.length); // Next slide
+    } else if (isRightSwipe) {
+      setActiveIndex((curr) => (curr - 1 + mockups.length) % mockups.length); // Prev slide
+    }
+  };
+
   return (
     <div
       className="relative w-full max-w-[300px] sm:max-w-lg mx-auto h-[620px] flex items-center justify-center mt-12 lg:mt-0 perspective-[1000px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEndHandler}
     >
       {mockups.map((m, idx) => {
         let offset = idx - activeIndex;
