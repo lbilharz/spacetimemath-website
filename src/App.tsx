@@ -253,21 +253,23 @@ const InteractiveHeroMockups = () => {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
-  useEffect(() => {
-    if (isHovered) return;
-    const interval = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % 3);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [isHovered]);
-
+  // We need mockups defined early to know its length inside the effect or just hardcode % 4
   const mockups = [
     { id: 'sprint', comp: <SprintMockup />, label: t('mockups.tab_sprint') },
     { id: 'tap', comp: <TapMockup />, label: t('mockups.tab_tap') },
     { id: 'matrix', comp: <LernuebersichtMockup />, label: t('mockups.tab_matrix') },
     { id: 'leaderboard', comp: <LeaderboardMockup />, label: t('mockups.tab_live') }
   ];
+
+  useEffect(() => {
+    if (isHovered || hasInteracted) return;
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % mockups.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isHovered, hasInteracted, mockups.length]);
 
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
@@ -290,8 +292,10 @@ const InteractiveHeroMockups = () => {
 
     if (isLeftSwipe) {
       setActiveIndex((curr) => (curr + 1) % mockups.length); // Next slide
+      setHasInteracted(true);
     } else if (isRightSwipe) {
       setActiveIndex((curr) => (curr - 1 + mockups.length) % mockups.length); // Prev slide
+      setHasInteracted(true);
     }
   };
 
@@ -324,7 +328,7 @@ const InteractiveHeroMockups = () => {
         return (
           <motion.div
             key={m.id}
-            onClick={() => setActiveIndex(idx)}
+            onClick={() => { setActiveIndex(idx); setHasInteracted(true); }}
             className={`absolute cursor-pointer transition-colors duration-500 pointer-events-auto w-[270px] ${!isCenter && 'hover:brightness-110'}`}
             animate={{
               x: xBase, y: yBase, scale: scaleBase, rotateY, rotateZ, zIndex, opacity: isCenter ? 1 : isBack ? 0 : 0.4
@@ -342,7 +346,7 @@ const InteractiveHeroMockups = () => {
         {mockups.map((m, idx) => (
           <button
             key={idx}
-            onClick={() => setActiveIndex(idx)}
+            onClick={() => { setActiveIndex(idx); setHasInteracted(true); }}
             className={`text-xs font-bold transition-all px-4 pt-1.5 pb-2 leading-none rounded-full whitespace-nowrap ${activeIndex === idx ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-md' : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700'}`}
           >
             {m.label}
