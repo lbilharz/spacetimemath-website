@@ -421,7 +421,7 @@ const LandingPage = () => {
             {t('features.title_1')} <br /><span className="text-slate-400">{t('features.title_2')}</span>
           </h2>
         </FadeIn>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FadeIn delay={0.1} className="h-full">
             <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all group h-full">
               <div className="w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
@@ -463,6 +463,32 @@ const LandingPage = () => {
               <h3 className="text-xl font-bold mb-4 text-slate-800 dark:text-white transition-colors">{t('features.f4_title')}</h3>
               <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed transition-colors">
                 {t('features.f4_desc')}
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.5} className="h-full">
+            <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all group h-full">
+              <div className="w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                <div className="text-orange-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-slate-800 dark:text-white transition-colors">{t('features.f5_title')}</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed transition-colors">
+                {t('features.f5_desc')}
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.6} className="h-full">
+            <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/30 transition-all group h-full">
+              <div className="w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                <div className="text-emerald-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 22-8-4.5v-6.3A15.35 15.35 0 0 1 12 1a15.35 15.35 0 0 1 8 10.2v6.3z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-slate-800 dark:text-white transition-colors">{t('features.f6_title')}</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed transition-colors">
+                {t('features.f6_desc')}
               </p>
             </div>
           </FadeIn>
@@ -608,9 +634,6 @@ function App() {
     setIsDark(!isDark);
   };
 
-  const toggleLang = () => {
-    i18n.changeLanguage(i18n.language.startsWith('de') ? 'en' : 'de');
-  };
 
   useEffect(() => {
     const onLocationChange = () => {
@@ -647,9 +670,24 @@ function App() {
             <button onClick={toggleDark} className="p-2 rounded-full text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark Mode">
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <button onClick={toggleLang} className="px-2 py-1 rounded-md text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider">
-              <Globe size={16} /> <span className="hidden sm:inline">{i18n.language.substring(0,2)}</span>
-            </button>
+            <div className="relative flex items-center sm:ml-2">
+              <Globe size={16} className="absolute left-2 text-slate-500 dark:text-slate-400 pointer-events-none" />
+              <select 
+                value={i18n.language.substring(0,2)}
+                onChange={(e) => i18n.changeLanguage(e.target.value)}
+                className="pl-8 pr-2 py-1.5 appearance-none bg-transparent rounded-md text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-bold text-xs uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none focus:ring-2 focus:ring-brand-yellow/50"
+              >
+                <option value="en" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇬🇧 EN</option>
+                <option value="de" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇩🇪 DE</option>
+                <option value="es" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇪🇸 ES</option>
+                <option value="fr" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇫🇷 FR</option>
+                <option value="nl" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇳🇱 NL</option>
+                <option value="tr" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇹🇷 TR</option>
+                <option value="uk" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇺🇦 UK</option>
+                <option value="ar" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇸🇦 AR</option>
+                <option value="zh" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇨🇳 ZH</option>
+              </select>
+            </div>
             <button className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold py-2 px-4 sm:py-2.5 sm:px-6 rounded-full transition-all flex items-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 text-sm sm:text-base pointer-events-auto" onClick={() => window.open('https://better-1up.vercel.app', '_blank')}>
               <span className="hidden sm:inline">{t('nav.practice')}</span>
               <span className="inline sm:hidden">{t('nav.practice_short')}</span>

@@ -20,18 +20,22 @@
     "title_1": "Educationally valuable.",
     "title_2": "Insanely motivating.",
     "f1_title": "60-Second Sprints",
-    "f1_desc": "Ultra-short practice phases that fit perfectly into any lesson. Focus stays high, frustration stays out.",
+    "f1_desc": "Ultra-short practice phases that fit perfectly into any lesson plan. Focus stays high, cognitive load is managed, and frustration stays out.",
     "f2_title": "Visual Understanding",
-    "f2_desc": "Moving away from pure memorization. Interactive dot arrays help children understand the logic behind multiplication.",
+    "f2_desc": "Moving away from pure rote memorization. Interactive dot arrays help students intuitively grasp the geometric logic behind multiplication.",
     "f3_title": "Mastery Grid",
-    "f3_desc": "A clear 10x10 progression grid. See instantly which problems are mastered and where practice is still needed.",
+    "f3_desc": "A transparent 10x10 progression matrix. Automatically performs formative assessment so you instantly see which problems are mastered.",
     "f4_title": "Adaptive Engine",
-    "f4_desc": "Dynamically matches problem difficulty to the student's speed and accuracy in real time. Perfectly tailored challenges, zero frustration."
+    "f4_desc": "Dynamically matches problem difficulty to the student's speed and accuracy in real-time. Perfectly tailored challenges inside their Zone of Proximal Development.",
+    "f5_title": "Automated Study Habits",
+    "f5_desc": "Students return to class with stronger fundamentals. Friendly reminders encourage children to build independent daily practice routines, so you spend less time motivating and more time teaching.",
+    "f6_title": "Absolute Privacy",
+    "f6_desc": "No PII collection. No student accounts. We use anonymous device-bound sessions to track mastery, guaranteeing absolute compliance with school privacy protocols."
   },
   "cta": {
     "title_1": "Ready for your next",
     "title_2": "Math Lesson?",
-    "subtitle": "Try it out. It takes exactly 1 minute to set up your first class on the web. Or download the app directly.",
+    "subtitle": "Try it out. It takes exactly 1 minute to set up your first class on the web. Or download the app directly to individual student tablets.",
     "button_try": "Try now",
     "button_app": "Get Mobile App"
   },
@@ -39,7 +43,7 @@
     "made_with": "Built with ♥️ for teachers everywhere.",
     "impressum": "Imprint",
     "privacy": "Privacy & Kids Policy",
-    "login": "Web Login"
+    "login": "Teacher Login"
   },
   "legal": {
     "back": "Back to Home",
