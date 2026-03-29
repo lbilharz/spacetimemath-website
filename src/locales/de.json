@@ -64,7 +64,7 @@
     "p2_desc": "Auch Lehrkräfte benötigen kein klassisches Konto. Optional kann eine E-Mail-Adresse hinterlegt werden, um einen Wiederherstellungscode per E-Mail zu erhalten.",
     "p3_title": "3. Streng werbefrei und \"No Tracking\"",
     "p3_desc": "Better 1UP ist ein Bildungsprodukt für Klassenräume. Wir garantieren:",
-    "p3_li1": "Keine Tracking-Algorithmen (z.B. Google Analytics).",
+    "p3_li1": "Keine Drittanbieter-Analysen: Wir verwenden keine externen Tracking-Dienste. Anonyme Spiel-Telemetrie (Antwortzeiten, Richtigkeitsraten) wird auf unserem SpaceTimeDB-Spieleserver und über die Hugging Face-Infrastruktur verarbeitet, um den adaptiven Schwierigkeitsgrad zu steuern. Es sind keine personenbezogenen Daten enthalten.",
     "p3_li2": "Keine Werbung im Unterricht.",
     "p3_li3": "Kein Datenverkauf an Dritte.",
     "p4_title": "4. Hosting dieser Website",

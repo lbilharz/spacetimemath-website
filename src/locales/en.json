@@ -64,7 +64,7 @@
     "p2_desc": "Teachers also do not need a traditional account for the app. Optionally, an email address can be provided to receive a recovery code via email (technically sent via our service provider Resend) to restore access to your own classroom. This email address is treated confidentially and never used for marketing purposes.",
     "p3_title": "3. Strictly Ad-Free and \"No Tracking\"",
     "p3_desc": "Better 1UP is an educational product for classrooms. We guarantee:",
-    "p3_li1": "No tracking algorithms: We do not use analytics services (like Google Analytics) in the app.",
+    "p3_li1": "No third-party tracking: We do not use external analytics services. Anonymous gameplay telemetry (response times, correctness rates) is processed on our SpaceTimeDB game server and evaluated via Hugging Face infrastructure to power adaptive difficulty. No personally identifiable information is included.",
     "p3_li2": "No ads: We do not show any in-app advertising or sponsored content.",
     "p3_li3": "No data sales: Data is never sold to third parties or misused for marketing.",
     "p4_title": "4. Hosting of this Website",

@@ -64,7 +64,7 @@
     "p2_desc": "Sadece güvenlik maili.",
     "p3_title": "3. Reklam Yok",
     "p3_desc": "Zihin için iyi.",
-    "p3_li1": "İzleme yok.",
+    "p3_li1": "Üçüncü taraf izleme yok: Harici analiz hizmetleri kullanmıyoruz. Anonim oyun telemetrisi, uyarlanabilir zorluğu güçlendirmek için SpaceTimeDB oyun sunucumuzda ve Hugging Face altyapısında işlenir. Kişiselleştirilebilir hiçbir bilgi dahil edilmemiştir.",
     "p3_li2": "Reklam yok.",
     "p3_li3": "Satılık veri yok.",
     "p4_title": "4. Altyapı",

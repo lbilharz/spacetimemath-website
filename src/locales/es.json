@@ -64,7 +64,7 @@
     "p2_desc": "Oportunidad de email opcional.",
     "p3_title": "3. Cero anuncios",
     "p3_desc": "Sin distractores.",
-    "p3_li1": "No tracking.",
+    "p3_li1": "Sin seguimiento de terceros: no utilizamos servicios analíticos externos. La telemetría anónima del juego se procesa en nuestro servidor SpaceTimeDB y se evalúa a través de la infraestructura de Hugging Face para adaptar la dificultad. No se incluye información de identificación personal.",
     "p3_li2": "No ads.",
     "p3_li3": "No data sale.",
     "p4_title": "4. Alojamiento",

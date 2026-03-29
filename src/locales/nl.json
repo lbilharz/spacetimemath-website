@@ -64,7 +64,7 @@
     "p2_desc": "Optioneel email.",
     "p3_title": "3. Strikt reclameloos",
     "p3_desc": "Geen ruis.",
-    "p3_li1": "Geen volgscripts.",
+    "p3_li1": "Geen tracking door derden: We gebruiken geen externe analysediensten. Anonieme gameplay-telemetrie wordt verwerkt op onze SpaceTimeDB-gameserver en geëvalueerd via de Hugging Face-infrastructuur om de adaptieve moeilijkheidsgraad aan te sturen. Er wordt geen PII opgenomen.",
     "p3_li2": "Geen advertenties.",
     "p3_li3": "Geen verkoop.",
     "p4_title": "4. Vercel Hosting",

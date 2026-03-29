@@ -615,14 +615,44 @@ const Datenschutz = ({ navigate }: { navigate: (path: string) => void }) => {
   </section>
 )};
 
-function App() {
+const supportedLangs = ['en', 'de', 'es', 'fr', 'tr', 'uk', 'zh', 'ar', 'nl'];
+
+function App({ ssrPath }: { ssrPath?: string }) {
   const { t, i18n } = useTranslation();
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
-  const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains('dark'));
-  
+  const [currentPath, setCurrentPath] = useState(ssrPath || (typeof window !== 'undefined' ? window.location.pathname : '/'));
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof document !== 'undefined') {
+      return document.documentElement.classList.contains('dark');
+    }
+    return false;
+  });
+
+  const pathSegments = currentPath.split('/').filter(Boolean);
+  const hasLangPrefix = pathSegments.length > 0 && supportedLangs.includes(pathSegments[0]);
+  const currentLang = hasLangPrefix ? pathSegments[0] : undefined;
+  const routePath = hasLangPrefix ? '/' + pathSegments.slice(1).join('/') : currentPath;
+  const activeRoute = routePath === '/' || routePath === '' ? '/' : routePath;
+
+  // Sync i18n to URL
+  if (hasLangPrefix && i18n.language?.substring(0, 2) !== currentLang) {
+    i18n.changeLanguage(currentLang);
+  }
+
+  useEffect(() => {
+    // Client-side auto-redirect for un-prefixed URLs
+    if (typeof window !== 'undefined' && !hasLangPrefix) {
+      let targetLang = i18n.language?.substring(0, 2) || 'de';
+      if (!supportedLangs.includes(targetLang)) targetLang = 'de';
+      const newPath = `/${targetLang}${activeRoute === '/' ? '' : activeRoute}`;
+      window.history.replaceState({}, '', newPath);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setCurrentPath(newPath);
+    }
+  }, [hasLangPrefix, activeRoute, i18n.language]);
+
   useEffect(() => {
     // Check initial system preference if no class is set
-    if (!document.documentElement.classList.contains('dark') && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (typeof document !== 'undefined' && !document.documentElement.classList.contains('dark') && window.matchMedia('(prefers-color-scheme: dark)').matches) {
        document.documentElement.classList.add('dark');
        // eslint-disable-next-line react-hooks/set-state-in-effect
        setIsDark(true);
@@ -630,10 +660,11 @@ function App() {
   }, []);
 
   const toggleDark = () => {
-    document.documentElement.classList.toggle('dark');
-    setIsDark(!isDark);
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.toggle('dark');
+      setIsDark(!isDark);
+    }
   };
-
 
   useEffect(() => {
     const onLocationChange = () => {
@@ -643,15 +674,17 @@ function App() {
     return () => window.removeEventListener('popstate', onLocationChange);
   }, []);
 
-  const navigate = (path: string) => {
-    window.history.pushState({}, '', path);
-    setCurrentPath(path);
+  const navigate = (path: string) => { // path is base route like '/' or '/impressum'
+    const targetLang = currentLang || i18n.language?.substring(0,2) || 'de';
+    const newPath = `/${targetLang}${path === '/' ? '' : path}`;
+    window.history.pushState({}, '', newPath);
+    setCurrentPath(newPath);
     window.scrollTo(0, 0);
   };
 
   const renderContent = () => {
-    if (currentPath === '/impressum') return <Impressum navigate={navigate} />;
-    if (currentPath === '/datenschutz') return <Datenschutz navigate={navigate} />;
+    if (activeRoute === '/impressum') return <Impressum navigate={navigate} />;
+    if (activeRoute === '/datenschutz') return <Datenschutz navigate={navigate} />;
     return <LandingPage />;
   };
 
@@ -673,8 +706,14 @@ function App() {
             <div className="relative flex items-center sm:ml-2">
               <Globe size={16} className="absolute left-2 text-slate-500 dark:text-slate-400 pointer-events-none" />
               <select 
-                value={i18n.language.substring(0,2)}
-                onChange={(e) => i18n.changeLanguage(e.target.value)}
+                value={currentLang || i18n.language?.substring(0,2) || 'de'}
+                onChange={(e) => {
+                  const newLang = e.target.value;
+                  i18n.changeLanguage(newLang);
+                  const newPath = `/${newLang}${activeRoute === '/' ? '' : activeRoute}`;
+                  window.history.pushState({}, '', newPath);
+                  setCurrentPath(newPath);
+                }}
                 className="pl-8 pr-2 py-1.5 appearance-none bg-transparent rounded-md text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-bold text-xs uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none focus:ring-2 focus:ring-brand-yellow/50"
               >
                 <option value="en" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇬🇧 EN</option>

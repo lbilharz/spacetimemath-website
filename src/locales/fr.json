@@ -64,7 +64,7 @@
     "p2_desc": "Option.",
     "p3_title": "3. Pas de pub",
     "p3_desc": "Clean.",
-    "p3_li1": "Jamais.",
+    "p3_li1": "Pas de suivi par des tiers : nous n'utilisons pas de services d'analyse externes. La télémétrie de jeu anonyme (temps, taux de réussite) est traitée sur notre serveur SpaceTimeDB et évaluée via l'infrastructure Hugging Face pour adapter la difficulté. Aucune information personnelle n'est incluse.",
     "p3_li2": "Jamais.",
     "p3_li3": "Jamais.",
     "p4_title": "4. Hébergement",
