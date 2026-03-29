@@ -381,10 +381,10 @@ const LandingPage = () => {
             </p>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 items-center">
-                <button onClick={() => window.open('https://better-1up.vercel.app', '_blank')} className="w-full sm:w-auto bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold text-lg py-4 px-8 rounded-full shadow-xl shadow-brand-yellow/30 dark:shadow-brand-yellow/10 transition-all hover:scale-105 flex items-center justify-center gap-3">
+                <a href="https://better-1up.vercel.app" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold text-lg py-4 px-8 rounded-full shadow-xl shadow-brand-yellow/30 dark:shadow-brand-yellow/10 transition-all hover:scale-105 flex items-center justify-center gap-3">
                   <Monitor size={22} strokeWidth={2.5} />
                   {t('hero.cta_web')}
-                </button>
+                </a>
               </div>
               <div className="flex justify-center lg:justify-start gap-4 items-center flex-wrap">
                 <button className="flex items-center gap-3 bg-slate-900 dark:bg-slate-800 text-white px-5 py-3 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20 dark:hover:shadow-black/50 border border-transparent dark:border-slate-700">
@@ -512,10 +512,10 @@ const LandingPage = () => {
             {t('cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
-            <button onClick={() => window.open('https://better-1up.vercel.app', '_blank')} className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-black text-lg py-4 flex-1 sm:w-auto px-8 rounded-xl shadow-2xl shadow-brand-yellow/20 transition-all hover:-translate-y-1 inline-flex items-center justify-center gap-3">
+            <a href="https://better-1up.vercel.app" target="_blank" rel="noopener noreferrer" className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-black text-lg py-4 flex-1 sm:w-auto px-8 rounded-xl shadow-2xl shadow-brand-yellow/20 transition-all hover:-translate-y-1 inline-flex items-center justify-center gap-3">
               <Monitor size={22} strokeWidth={2.5} />
               {t('cta.button_try')}
-            </button>
+            </a>
             <button className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white px-8 py-4 w-full sm:w-auto rounded-xl hover:-translate-y-1 transition-all outline outline-1 outline-white/20">
               <Smartphone size={22} strokeWidth={2.5} />
               <span className="text-left font-bold text-lg">{t('cta.button_app')}</span>
@@ -532,10 +532,10 @@ const Impressum = ({ navigate }: { navigate: (path: string) => void }) => {
   return (
   <section className="pt-32 pb-20 px-6 w-full max-w-3xl mx-auto">
     <FadeIn>
-      <button onClick={() => navigate('/')} className="mb-8 group flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-bold transition-colors">
+      <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }} className="mb-8 group flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-bold transition-colors">
         <ArrowRight className="rotate-180 group-hover:-translate-x-1 transition-transform" size={18} strokeWidth={3} /> 
         {t('legal.back')}
-      </button>
+      </a>
       <h1 className="text-4xl font-black mb-8 text-slate-800 dark:text-white transition-colors">{t('legal.impressum_title')}</h1>
       <div className="text-slate-600 dark:text-slate-400 space-y-4 font-medium transition-colors">
         <h3 className="text-xl font-bold text-slate-800 dark:text-white">{t('legal.impressum_tmg')}</h3>
@@ -571,10 +571,10 @@ const Datenschutz = ({ navigate }: { navigate: (path: string) => void }) => {
   return (
   <section className="pt-32 pb-20 px-6 w-full max-w-3xl mx-auto">
     <FadeIn>
-      <button onClick={() => navigate('/')} className="mb-8 group flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-bold transition-colors">
+      <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }} className="mb-8 group flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-bold transition-colors">
         <ArrowRight className="rotate-180 group-hover:-translate-x-1 transition-transform" size={18} strokeWidth={3} /> 
         {t('legal.back')}
-      </button>
+      </a>
       <h1 className="text-4xl font-black mb-8 text-slate-800 dark:text-white transition-colors">{t('legal.privacy_title')}</h1>
       <div className="text-slate-600 dark:text-slate-400 space-y-6 font-medium leading-relaxed transition-colors">
         <p><strong>{t('legal.privacy_date')}</strong></p>
@@ -698,12 +698,12 @@ function App({ ssrPath }: { ssrPath?: string }) {
     <div className="min-h-screen text-slate-800 dark:text-slate-100 selection:bg-brand-yellow/30 bg-brand-bg dark:bg-slate-950 pb-10 flex flex-col transition-colors duration-300">
       <nav className="fixed top-0 w-full bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl z-[100] border-b border-slate-200/50 dark:border-slate-800/50 transition-colors">
         <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
-          <div className="flex items-center gap-3 font-extrabold text-2xl tracking-tight cursor-pointer text-slate-800 dark:text-white transition-colors" onClick={() => navigate('/')}>
+          <a href="/" className="flex items-center gap-3 font-extrabold text-2xl tracking-tight cursor-pointer text-slate-800 dark:text-white transition-colors" onClick={(e) => { e.preventDefault(); navigate('/'); }}>
             <div className="bg-white dark:bg-slate-800 p-1.5 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-center transition-colors">
               <Logo className="w-7 h-7" />
             </div>
             Better <span className="text-brand-yellow-hover">1UP</span>
-          </div>
+          </a>
 
           <div className="flex items-center gap-2 sm:gap-6">
             <button onClick={toggleDark} className="p-2 rounded-full text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark Mode">
@@ -733,11 +733,11 @@ function App({ ssrPath }: { ssrPath?: string }) {
                 <option value="zh" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇨🇳 ZH</option>
               </select>
             </div>
-            <button className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold py-2 px-4 sm:py-2.5 sm:px-6 rounded-full transition-all flex items-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 text-sm sm:text-base pointer-events-auto" onClick={() => window.open('https://better-1up.vercel.app', '_blank')}>
+            <a href="https://better-1up.vercel.app" target="_blank" rel="noopener noreferrer" className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold py-2 px-4 sm:py-2.5 sm:px-6 rounded-full transition-all flex items-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 text-sm sm:text-base pointer-events-auto">
               <span className="hidden sm:inline">{t('nav.practice')}</span>
               <span className="inline sm:hidden">{t('nav.practice_short')}</span>
               <ArrowRight size={18} strokeWidth={3} />
-            </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -747,15 +747,15 @@ function App({ ssrPath }: { ssrPath?: string }) {
       </main>
 
       <footer className="py-12 bg-brand-bg dark:bg-slate-950 text-slate-500 dark:text-slate-400 text-center text-sm font-medium border-t border-slate-200 dark:border-slate-800 mt-auto transition-colors">
-        <div className="flex items-center justify-center gap-2 mb-4 text-xl font-bold text-slate-800 dark:text-white cursor-pointer transition-colors" onClick={() => navigate('/')}>
+        <a href="/" className="flex items-center justify-center gap-2 mb-4 text-xl font-bold text-slate-800 dark:text-white cursor-pointer transition-colors" onClick={(e) => { e.preventDefault(); navigate('/'); }}>
           <Logo className="w-6 h-6 grayscale opacity-80" />
           Better <span className="text-brand-yellow">1UP</span>
-        </div>
+        </a>
         <p>{t('footer.made_with')}</p>
         <div className="flex justify-center gap-6 mt-6 flex-wrap">
-          <span onClick={() => navigate('/impressum')} className="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors">{t('footer.impressum')}</span>
-          <span onClick={() => navigate('/datenschutz')} className="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors">{t('footer.privacy')}</span>
-          <span onClick={() => window.open('https://better-1up.vercel.app', '_blank')} className="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors">{t('footer.login')}</span>
+          <a href="/impressum" onClick={(e) => { e.preventDefault(); navigate('/impressum'); }} className="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors block">{t('footer.impressum')}</a>
+          <a href="/datenschutz" onClick={(e) => { e.preventDefault(); navigate('/datenschutz'); }} className="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors block">{t('footer.privacy')}</a>
+          <a href="https://better-1up.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors block">{t('footer.login')}</a>
         </div>
       </footer>
     </div>
