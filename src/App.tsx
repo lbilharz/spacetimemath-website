@@ -602,9 +602,15 @@ const Datenschutz = ({ navigate }: { navigate: (path: string) => void }) => {
         <h3 className="text-xl font-bold text-slate-800 dark:text-white mt-8 mb-4">{t('legal.p4_title')}</h3>
         <p>{t('legal.p4_desc')}</p>
 
-        <h3 className="text-xl font-bold text-slate-800 dark:text-white mt-8 mb-4">{t('legal.p5_title')}</h3>
+        <h3 className="text-xl font-bold text-slate-800 dark:text-white mt-8 mb-4">{t('legal.p6_title')}</h3>
+        <p>{t('legal.p6_desc')}</p>
+
+        <h3 className="text-xl font-bold text-slate-800 dark:text-white mt-8 mb-4">{t('legal.p7_title')}</h3>
+        <p>{t('legal.p7_desc')}</p>
+
+        <h3 className="text-xl font-bold text-slate-800 dark:text-white mt-8 mb-4">{t('legal.p8_title')}</h3>
         <p>
-          {t('legal.p5_desc')}<br/>
+          {t('legal.p8_desc')}<br/>
           Lars Bilharz<br/>
           Boppstraße 3<br/>
           10967 Berlin<br/>
