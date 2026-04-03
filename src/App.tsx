@@ -381,7 +381,7 @@ const LandingPage = () => {
             </p>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 items-center">
-                <a href="https://better-1up.vercel.app" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold text-lg py-4 px-8 rounded-full shadow-xl shadow-brand-yellow/30 dark:shadow-brand-yellow/10 transition-all hover:scale-105 flex items-center justify-center gap-3">
+                <a href="https://up.bilharz.eu" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold text-lg py-4 px-8 rounded-full shadow-xl shadow-brand-yellow/30 dark:shadow-brand-yellow/10 transition-all hover:scale-105 flex items-center justify-center gap-3">
                   <Monitor size={22} strokeWidth={2.5} />
                   {t('hero.cta_web')}
                 </a>
@@ -512,7 +512,7 @@ const LandingPage = () => {
             {t('cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
-            <a href="https://better-1up.vercel.app" target="_blank" rel="noopener noreferrer" className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-black text-lg py-4 flex-1 sm:w-auto px-8 rounded-xl shadow-2xl shadow-brand-yellow/20 transition-all hover:-translate-y-1 inline-flex items-center justify-center gap-3">
+            <a href="https://up.bilharz.eu" target="_blank" rel="noopener noreferrer" className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-black text-lg py-4 flex-1 sm:w-auto px-8 rounded-xl shadow-2xl shadow-brand-yellow/20 transition-all hover:-translate-y-1 inline-flex items-center justify-center gap-3">
               <Monitor size={22} strokeWidth={2.5} />
               {t('cta.button_try')}
             </a>
@@ -733,7 +733,7 @@ function App({ ssrPath }: { ssrPath?: string }) {
                 <option value="zh" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇨🇳 ZH</option>
               </select>
             </div>
-            <a href="https://better-1up.vercel.app" target="_blank" rel="noopener noreferrer" className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold py-2 px-4 sm:py-2.5 sm:px-6 rounded-full transition-all flex items-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 text-sm sm:text-base pointer-events-auto">
+            <a href="https://up.bilharz.eu" target="_blank" rel="noopener noreferrer" className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold py-2 px-4 sm:py-2.5 sm:px-6 rounded-full transition-all flex items-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 text-sm sm:text-base pointer-events-auto">
               <span className="hidden sm:inline">{t('nav.practice')}</span>
               <span className="inline sm:hidden">{t('nav.practice_short')}</span>
               <ArrowRight size={18} strokeWidth={3} />
@@ -755,7 +755,7 @@ function App({ ssrPath }: { ssrPath?: string }) {
         <div className="flex justify-center gap-6 mt-6 flex-wrap">
           <a href="/impressum" onClick={(e) => { e.preventDefault(); navigate('/impressum'); }} className="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors block">{t('footer.impressum')}</a>
           <a href="/datenschutz" onClick={(e) => { e.preventDefault(); navigate('/datenschutz'); }} className="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors block">{t('footer.privacy')}</a>
-          <a href="https://better-1up.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors block">{t('footer.login')}</a>
+          <a href="https://up.bilharz.eu" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors block">{t('footer.login')}</a>
         </div>
       </footer>
     </div>
