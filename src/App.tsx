@@ -665,6 +665,13 @@ function App({ ssrPath }: { ssrPath?: string }) {
     }
   }, []);
 
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.dir = i18n.language?.startsWith('ar') ? 'rtl' : 'ltr';
+      document.documentElement.lang = i18n.language || 'en';
+    }
+  }, [i18n.language]);
+
   const toggleDark = () => {
     if (typeof document !== 'undefined') {
       document.documentElement.classList.toggle('dark');
