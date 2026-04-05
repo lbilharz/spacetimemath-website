@@ -697,7 +697,7 @@ function App({ ssrPath }: { ssrPath?: string }) {
 
   const renderContent = () => {
     if (activeRoute === '/impressum') return <Impressum navigate={navigate} />;
-    if (activeRoute === '/datenschutz') return <Datenschutz navigate={navigate} />;
+    if (activeRoute === '/datenschutz' || activeRoute === '/privacy') return <Datenschutz navigate={navigate} />;
     return <LandingPage />;
   };
 

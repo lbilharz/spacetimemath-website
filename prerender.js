@@ -10,9 +10,9 @@ const templatePath = toAbsolute('dist/index.html');
 const template = fs.readFileSync(templatePath, 'utf-8');
 
 const supportedLangs = ['en', 'de', 'es', 'fr', 'tr', 'uk', 'zh', 'ar', 'nl'];
-const baseRoutes = ['/', '/impressum', '/datenschutz'];
+const baseRoutes = ['/', '/impressum', '/datenschutz', '/privacy'];
 
-let routesToPrerender = ['/']; // Keep base root
+let routesToPrerender = ['/', '/impressum', '/datenschutz', '/privacy']; // Keep base root
 
 for (const lang of supportedLangs) {
   for (const route of baseRoutes) {
