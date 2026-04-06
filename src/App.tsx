@@ -361,10 +361,10 @@ const LandingPage = () => {
   const { t } = useTranslation();
   return (
   <>
-    <section className="pt-32 pb-20 px-6 overflow-hidden relative min-h-[900px] lg:min-h-0 flex items-center transition-colors">
+    <section className="pt-8 lg:pt-20 pb-10 lg:pb-20 px-4 sm:px-6 overflow-hidden relative lg:min-h-0 flex items-start lg:items-center transition-colors">
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-brand-yellow/10 dark:bg-brand-yellow/5 rounded-full blur-[120px] -z-10 absolute pointer-events-none transition-colors" />
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 w-full">
-        <div className="flex-1 text-center lg:text-left pt-10 lg:pt-0 z-10 w-full">
+        <div className="flex-1 text-center lg:text-left pt-2 lg:pt-0 z-10 w-full">
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm mb-6 text-sm font-bold text-slate-600 dark:text-slate-300 transition-colors">
               <span className="flex h-2 w-2 rounded-full bg-brand-yellow-hover"></span>
@@ -704,20 +704,20 @@ function App({ ssrPath }: { ssrPath?: string }) {
   return (
     <div className="min-h-screen text-slate-800 dark:text-slate-100 selection:bg-brand-yellow/30 bg-brand-bg dark:bg-slate-950 pb-10 flex flex-col transition-colors duration-300">
       <nav className="fixed top-0 w-full bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl z-[100] border-b border-slate-200/50 dark:border-slate-800/50 transition-colors">
-        <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3 font-extrabold text-2xl tracking-tight cursor-pointer text-slate-800 dark:text-white transition-colors" onClick={(e) => { e.preventDefault(); navigate('/'); }}>
-            <div className="bg-white dark:bg-slate-800 p-1.5 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-center transition-colors">
-              <Logo className="w-7 h-7" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between">
+          <a href="/" className="flex items-center gap-2 sm:gap-3 font-extrabold text-[1.4rem] sm:text-2xl tracking-tight cursor-pointer text-slate-800 dark:text-white transition-colors whitespace-nowrap" onClick={(e) => { e.preventDefault(); navigate('/'); }}>
+            <div className="bg-white dark:bg-slate-800 p-1 rounded-xl sm:p-1.5 shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-center transition-colors">
+              <Logo className="w-5 h-5 sm:w-7 sm:h-7" />
             </div>
-            Better <span className="text-brand-yellow-hover">1UP</span>
+            <span className="hidden sm:inline">Better </span><span className="text-brand-yellow-hover">1UP</span>
           </a>
 
-          <div className="flex items-center gap-2 sm:gap-6">
-            <button onClick={toggleDark} className="p-2 rounded-full text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark Mode">
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+          <div className="flex items-center gap-1 sm:gap-6">
+            <button onClick={toggleDark} className="p-1 sm:p-2 rounded-full text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark Mode">
+              {isDark ? <Sun size={18} className="sm:w-[20px] sm:h-[20px]" /> : <Moon size={18} className="sm:w-[20px] sm:h-[20px]" />}
             </button>
-            <div className="relative flex items-center sm:ml-2">
-              <Globe size={16} className="absolute left-2 text-slate-500 dark:text-slate-400 pointer-events-none" />
+            <div className="relative flex items-center sm:ml-2 hidden sm:flex">
+              <Globe size={14} className="absolute left-1.5 sm:left-2 text-slate-500 dark:text-slate-400 pointer-events-none sm:w-[16px] sm:h-[16px]" />
               <select 
                 value={currentLang || i18n.language?.substring(0,2) || 'de'}
                 onChange={(e) => {
@@ -727,7 +727,7 @@ function App({ ssrPath }: { ssrPath?: string }) {
                   window.history.pushState({}, '', newPath);
                   setCurrentPath(newPath);
                 }}
-                className="pl-8 pr-2 py-1.5 appearance-none bg-transparent rounded-md text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-bold text-xs uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none focus:ring-2 focus:ring-brand-yellow/50"
+                className="pl-6 pr-0 sm:pl-8 sm:pr-2 py-1.5 appearance-none bg-transparent rounded-md text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-bold text-[10px] sm:text-xs uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none focus:ring-2 focus:ring-brand-yellow/50"
               >
                 <option value="en" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇬🇧 EN</option>
                 <option value="de" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇩🇪 DE</option>
@@ -740,10 +740,10 @@ function App({ ssrPath }: { ssrPath?: string }) {
                 <option value="zh" className="text-slate-800 dark:bg-slate-800 dark:text-white">🇨🇳 ZH</option>
               </select>
             </div>
-            <a href="https://up.bilharz.eu" target="_blank" rel="noopener noreferrer" className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold py-2 px-4 sm:py-2.5 sm:px-6 rounded-full transition-all flex items-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 text-sm sm:text-base pointer-events-auto">
+            <a href="https://up.bilharz.eu" target="_blank" rel="noopener noreferrer" className="bg-brand-yellow hover:bg-brand-yellow-hover text-slate-900 font-bold py-1.5 px-3 sm:py-2.5 sm:px-6 rounded-full transition-all flex items-center gap-1 sm:gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 text-xs sm:text-base pointer-events-auto ml-1">
               <span className="hidden sm:inline">{t('nav.practice')}</span>
               <span className="inline sm:hidden">{t('nav.practice_short')}</span>
-              <ArrowRight size={18} strokeWidth={3} />
+              <ArrowRight size={16} strokeWidth={3} className="sm:w-[18px] sm:h-[18px]" />
             </a>
           </div>
         </div>
