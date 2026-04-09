@@ -387,20 +387,20 @@ const LandingPage = () => {
                 </a>
               </div>
               <div className="flex justify-center lg:justify-start gap-4 items-center flex-wrap">
-                <button className="flex items-center gap-3 bg-slate-900 dark:bg-slate-800 text-white px-5 py-3 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20 dark:hover:shadow-black/50 border border-transparent dark:border-slate-700">
+                <a href="https://apps.apple.com/us/app/better-1up/id6761323453" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-slate-900 dark:bg-slate-800 text-white px-5 py-3 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20 dark:hover:shadow-black/50 border border-transparent dark:border-slate-700">
                   <AppleSVG />
                   <div className="text-left leading-tight">
                     <div className="text-[10px] text-slate-300 dark:text-slate-400 font-semibold tracking-wider">{t('hero.app_store_dl')}</div>
                     <div className="font-bold text-sm">{t('hero.app_store_name')}</div>
                   </div>
-                </button>
-                <button className="flex items-center gap-3 bg-slate-900 dark:bg-slate-800 text-white px-5 py-3 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20 dark:hover:shadow-black/50 border border-transparent dark:border-slate-700">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=eu.bilharz.oneup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-slate-900 dark:bg-slate-800 text-white px-5 py-3 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20 dark:hover:shadow-black/50 border border-transparent dark:border-slate-700">
                   <PlaySVG />
                   <div className="text-left leading-tight">
                     <div className="text-[10px] text-slate-300 dark:text-slate-400 font-semibold tracking-wider">{t('hero.play_store_dl')}</div>
                     <div className="font-bold text-sm">{t('hero.play_store_name')}</div>
                   </div>
-                </button>
+                </a>
               </div>
               <span className="text-slate-400 dark:text-slate-500 font-medium text-sm text-center lg:text-left mt-2 block w-full transition-colors">{t('hero.disclaimer')}</span>
             </div>
@@ -516,10 +516,10 @@ const LandingPage = () => {
               <Monitor size={22} strokeWidth={2.5} />
               {t('cta.button_try')}
             </a>
-            <button className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white px-8 py-4 w-full sm:w-auto rounded-xl hover:-translate-y-1 transition-all outline outline-1 outline-white/20">
+            <a href="https://apps.apple.com/us/app/better-1up/id6761323453" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white px-8 py-4 w-full sm:w-auto rounded-xl hover:-translate-y-1 transition-all outline outline-1 outline-white/20">
               <Smartphone size={22} strokeWidth={2.5} />
               <span className="text-left font-bold text-lg">{t('cta.button_app')}</span>
-            </button>
+            </a>
           </div>
         </FadeIn>
       </div>
