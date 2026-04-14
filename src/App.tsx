@@ -548,8 +548,7 @@ const Impressum = ({ navigate }: { navigate: (path: string) => void }) => {
         
         <h3 className="text-xl font-bold text-slate-800 dark:text-white mt-8">{t('legal.impressum_contact')}</h3>
         <p>
-          Telefon: +49 170 43 610 17<br/>
-          E-Mail: <a href="mailto:info@lars-bilharz.de" className="text-blue-600 dark:text-blue-400 hover:underline">info@lars-bilharz.de</a>
+          E-Mail: <a href="mailto:feedback@up.bilharz.eu" className="text-blue-600 dark:text-blue-400 hover:underline">feedback@up.bilharz.eu</a>
         </p>
 
         <h3 className="text-xl font-bold text-slate-800 dark:text-white mt-8">{t('legal.impressum_responsible')}</h3>
@@ -614,7 +613,7 @@ const Datenschutz = ({ navigate }: { navigate: (path: string) => void }) => {
           Lars Bilharz<br/>
           Boppstraße 3<br/>
           10967 Berlin<br/>
-          E-Mail: <a href="mailto:info@lars-bilharz.de" className="text-blue-600 dark:text-blue-400 hover:underline">info@lars-bilharz.de</a>
+          E-Mail: <a href="mailto:feedback@up.bilharz.eu" className="text-blue-600 dark:text-blue-400 hover:underline">feedback@up.bilharz.eu</a>
         </p>
       </div>
     </FadeIn>
