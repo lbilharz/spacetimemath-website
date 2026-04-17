@@ -607,6 +607,13 @@ const Datenschutz = ({ navigate }: { navigate: (path: string) => void }) => {
         <h3 className="text-xl font-bold text-slate-800 dark:text-white mt-8 mb-4">{t('legal.p7_title')}</h3>
         <p>{t('legal.p7_desc')}</p>
 
+        <h3 className="text-xl font-bold text-slate-800 dark:text-white mt-8 mb-4">Account Deletion / Kontolöschung</h3>
+        <p>
+          To request the complete deletion of your recovery token and math sprint data, please send an email to <a href="mailto:feedback@up.bilharz.eu" className="text-blue-600 dark:text-blue-400 hover:underline">feedback@up.bilharz.eu</a>.<br/>
+          All associated gameplay data will be wiped within 7 days.<br/><br/>
+          Um die vollständige Löschung Ihres Wiederherstellungsschlüssels und Ihrer Spieldaten zu beantragen, senden Sie bitte eine E-Mail an <a href="mailto:feedback@up.bilharz.eu" className="text-blue-600 dark:text-blue-400 hover:underline">feedback@up.bilharz.eu</a>. Alle zugehörigen Daten werden innerhalb von 7 Tagen restlos gelöscht.
+        </p>
+
         <h3 className="text-xl font-bold text-slate-800 dark:text-white mt-8 mb-4">{t('legal.p8_title')}</h3>
         <p>
           {t('legal.p8_desc')}<br/>
