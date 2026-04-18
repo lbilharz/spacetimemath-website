@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Better 1UP - Official Testing Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-yellow: #facc15;
+      --brand-yellow-dark: #eab308;
+      --brand-dark: #1e293b;
+      --brand-gray: #f1f5f9;
+      --text-main: #334155;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
+      background: #e2e8f0;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      background: white;
+      max-width: 210mm;
+      min-height: 297mm;
+      margin: 2rem auto;
+      padding: 3rem 4rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      border-bottom: 3px solid var(--brand-dark);
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .logo-box {
+      width: 60px;
+      height: 60px;
+      background: var(--brand-dark);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-box::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(var(--brand-yellow) 20%, transparent 20%);
+      background-size: 10px 10px;
+      opacity: 0.3;
+    }
+
+    .logo-text {
+      color: var(--brand-yellow);
+      font-weight: 800;
+      font-size: 1.2rem;
+      z-index: 1;
+    }
+
+    h1 {
+      color: var(--brand-dark);
+      font-weight: 800;
+      font-size: 2.2rem;
+      margin: 0 0 0.2rem 0;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      color: #64748b;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+      page-break-inside: avoid;
+    }
+
+    .section-title {
+      background: var(--brand-dark);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+
+    .section-title span {
+      color: var(--brand-yellow);
+    }
+
+    ol {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    li strong {
+      color: var(--brand-dark);
+      font-weight: 800;
+      background: var(--brand-yellow);
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 0.2rem;
+    }
+
+    .note {
+      background: var(--brand-gray);
+      border-left: 4px solid var(--brand-yellow-dark);
+      padding: 1rem 1.5rem;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.95rem;
+      margin-top: 2rem;
+      color: #475569;
+    }
+
+    .note strong { margin-right: 0.5rem; }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .page {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        max-width: 100%;
+        min-height: auto;
+      }
+      .section-title {
+        border: 2px solid var(--brand-dark);
+        color: var(--brand-dark) !important;
+        background: transparent !important;
+        box-shadow: none;
+      }
+      .section-title span {
+        color: var(--brand-dark) !important;
+      }
+      li strong {
+        border: 1px solid var(--brand-dark);
+        background: transparent !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    
+    <header>
+      <div class="logo-box">
+        <div class="logo-text">1UP</div>
+      </div>
+      <div>
+        <h1>Better 1UP</h1>
+        <p class="subtitle">Official Guide (12-Person Group)</p>
+      </div>
+    </header>
+
+    <div class="section">
+      <div class="section-title"><span>1.</span> The Teacher Role (1 Person)</div>
+      <ol>
+        <li><strong>Sign Up & Elevate</strong> Open the app, set a username, and go to the <i>Account</i> tab. Click "Teacher" and enter your email address to validate. The secure 6-digit code will permanently unlock your Teacher tools.</li>
+        <li><strong>Create a Classroom</strong> Navigate to the <i>Classes</i> tab and tap "Create Class". Name it (e.g., <i>Alpha Testers</i>).</li>
+        <li><strong>Invite the Group</strong> The app generates a 6-character Join Code. You can print the login cards or simply display the live QR code on a screen for the 11 students to scan.</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span>2.</span> The Student Role (11 Persons)</div>
+      <ol>
+        <li><strong>Join the Class</strong> Open the app (no account/email required). Pick your username. Go to <i>Classes &rarr; Join Class</i> and enter the 6-character code (or scan the Teacher's QR code).</li>
+        <li><strong>Connect as Friends</strong> Go to the <i>Friends</i> tab. Tap "Create Invite Link" and share your code with a peer. You can now compete on your private leaderboard.</li>
+        <li><strong>Setup Push Reminders</strong> Go to <i>Account &rarr; App Settings &rarr; Push Reminders</i>. Set up a daily reminder to build your training habit!</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span>3.</span> The Live Class Test (Together)</div>
+      <ol>
+        <li><strong>Launch the Diagnostic Sprint</strong> Once all 11 students are actively visible as "Online" in the Classroom view, the Teacher taps "Start Sprint" and selects the <i>Diagnostic Sprint</i>.</li>
+        <li><strong>Answer the Problems</strong> All 11 student devices instantly shift into the 60-second sprint. Answer as accurately and quickly as possible!</li>
+        <li><strong>Review the Mastery Grid</strong> When the countdown ends, everyone can review their results. The Teacher will see the collective 10x10 *Classroom Mastery Grid* uncovering exactly where the group struggled most.</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span>4.</span> Individual Progression</div>
+      <ol>
+        <li><strong>Personal Analytics</strong> Students can open their <i>Progress</i> tab. Review the personal Mastery Grid to find the weakest concepts and strongest skills mathematically mapped by the engine.</li>
+        <li><strong>Train Independently</strong> Start a <i>Training Sprint</i> directly from the Lobby. The adaptive difficulty engine will now safely challenge you in your optimal learning zone.</li>
+        <li><strong>Climb the Ranks</strong> Check the <i>Friends</i> or <i>Classroom</i> tabs to see how your weighted points compare on the leaderboards.</li>
+        <li><strong>Unlock the 20x20 Domain</strong> Continue answering core problems correctly to push your 80% Mastery threshold. Hitting targets will unlock higher tiers, expanding your capabilities up to the absolute 20x20 bounds!</li>
+      </ol>
+    </div>
+
+    <div class="note">
+      <strong>Pro Tip:</strong> Please remind the 11 student testers to save their permanent Recovery Keys (found under Settings) if they want to retain their points and data across future app version updates.
+    </div>
+
+  </div>
+
+</body>
+</html>
